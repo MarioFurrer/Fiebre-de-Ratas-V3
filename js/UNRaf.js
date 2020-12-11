@@ -55,18 +55,18 @@ class UNRaf extends Phaser.Scene{
         this.load.audio("sonidoBoton", "./assets/Audio/boton.mp3");
 
         //Informacion
-        this.load.image('fotoRata', 'assets/images/fotoRata.png');
-        this.load.image('fotoRata2', 'assets/images/fotoRata2.png');
-        this.load.image('fotoRata3', 'assets/images/fotoRata3.png');
-        this.load.image('flecha', 'assets/images/Flecha.png');
-        this.load.image('flecha2', 'assets/images/Flecha2.png');
+        this.load.image('fotoRata', 'assets/Images/fotoRata.png');
+        this.load.image('fotoRata2', 'assets/Images/fotoRata2.png');
+        this.load.image('fotoRata3', 'assets/Images/fotoRata3.png');
+        this.load.image('flecha', 'assets/Images/Flecha.png');
+        this.load.image('flecha2', 'assets/Images/Flecha2.png');
 
         //Ayuda
-        this.load.image('keys', 'assets/images/keys.png');
-        this.load.image('keyUP', 'assets/images/keyUP.png');
-        this.load.image('keyDOWN', 'assets/images/keyDOWN.png');
-        this.load.image('keyLEFT', 'assets/images/keyLEFT.png');
-        this.load.image('keyRIGHT', 'assets/images/keyRIGHT.png');
+        this.load.image('keys', 'assets/Images/keys.png');
+        this.load.image('keyUP', 'assets/Images/keyUP.png');
+        this.load.image('keyDOWN', 'assets/Images/keyDOWN.png');
+        this.load.image('keyLEFT', 'assets/Images/keyLEFT.png');
+        this.load.image('keyRIGHT', 'assets/Images/keyRIGHT.png');
         this.load.image('keySB', 'assets/images/keySB.png');
         this.load.image('keySB2', 'assets/images/keySB2.png');
 
@@ -75,7 +75,7 @@ class UNRaf extends Phaser.Scene{
         //Juego
         this.load.bitmapFont("pixelFont", "assets/font/font.png", "assets/font/font.xml");
         this.load.tilemapTiledJSON('Escena1', 'assets/Json/Escena1.json');
-        this.load.image('Escena1', 'assets/images/escena1.png');
+        this.load.image('Escena1', 'assets/Images/escena1.png');
         this.load.atlas('escena1', 'assets/Images/escena1.png', 'assets/Json/escena1_atlas.json');
 
         this.load.image("Escena1D", "./assets/Images/escena1D.png");
