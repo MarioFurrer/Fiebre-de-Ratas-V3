@@ -1,0 +1,325 @@
+class Menu extends Phaser.Scene{
+    constructor(){
+        super("Menu");
+    }
+
+    create(){
+
+        pag = 1;
+        
+        //Fondo
+        this.add.image(325, 325, "Fondo");
+
+        this.add.image(325, 450, "cartel");
+
+        // Español
+        if (language == 0){
+            
+            //Logo
+            Logo = this.add.image(325, 150, "LogoES").setScale(2);
+
+            //Jugar
+            botonJugar = this.add.image(325, 355, "Jugar").setInteractive()
+            .on("pointerover", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonJugar2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("SeleccionLvL");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+    
+            botonJugar2 = this.add.sprite(325, 355, "Jugar2").setVisible(false);
+
+            //Ayuda
+            botonAyuda = this.add.image(325, 425, "Ayuda").setInteractive()
+            .on("pointerover", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonAyuda2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Ayuda");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonAyuda2 = this.add.sprite(325, 425, "Ayuda2").setVisible(false);
+
+            //Información
+            botonInformacion = this.add.image(325, 485, "Informacion").setScale(1.2).setInteractive()
+            .on("pointerover", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonInformacion2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Informacion");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonInformacion2 = this.add.sprite(325, 485, "Informacion2").setScale(1.2).setVisible(false);
+
+            //Creditos
+            botonCreditos = this.add.image(325, 540, "Creditos").setScale(2.2).setInteractive()
+            .on("pointerover", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonCreditos2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Creditos");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonCreditos2 = this.add.sprite(325, 540, "Creditos2").setScale(2.2).setVisible(false);
+        }
+        // Inglés
+        else if (language == 1){
+
+            //Logo
+            Logo = this.add.image(325, 150, "LogoEN").setScale(2);
+
+            //Jugar
+            botonJugar = this.add.image(325, 355, "Play").setInteractive()
+            .on("pointerover", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonJugar2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("SeleccionLvL");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+    
+            botonJugar2 = this.add.sprite(325, 355, "Play2").setVisible(false);
+
+            //Ayuda
+            botonAyuda = this.add.image(325, 425, "Help").setInteractive()
+            .on("pointerover", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonAyuda2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Ayuda");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonAyuda2 = this.add.sprite(325, 425, "Help2").setVisible(false);
+
+            //Información
+            botonInformacion = this.add.image(325, 490, "Information").setScale(1.2).setInteractive()
+            .on("pointerover", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonInformacion2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Informacion");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonInformacion2 = this.add.sprite(325, 490, "Information2").setScale(1.2).setVisible(false);
+
+            //Creditos
+            botonCreditos = this.add.image(325, 540, "Credits").setScale(2.2).setInteractive()
+            .on("pointerover", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonCreditos2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Creditos");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonCreditos2 = this.add.sprite(325, 540, "Credits2").setScale(2.2).setVisible(false);
+        }
+        //Portugés
+        else {
+
+            //Logo
+            Logo = this.add.image(325, 150, "LogoPOR").setScale(2);
+
+            //Jugar
+            botonJugar = this.add.image(325, 355, "Jogar").setInteractive()
+            .on("pointerover", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonJugar2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonJugar2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("SeleccionLvL");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+    
+            botonJugar2 = this.add.sprite(325, 355, "Jogar2").setVisible(false);
+
+            //Ayuda
+            botonAyuda = this.add.image(325, 425, "Ajuda").setInteractive()
+            .on("pointerover", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonAyuda2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonAyuda2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Ayuda");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonAyuda2 = this.add.sprite(325, 425, "Ajuda2").setVisible(false);
+
+            //Información
+            botonInformacion = this.add.image(325, 485, "Em_formacao").setScale(1.3).setInteractive()
+            .on("pointerover", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonInformacion2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonInformacion2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Informacion");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonInformacion2 = this.add.sprite(325, 485, "Em_formacao2").setScale(1.3).setVisible(false);
+
+            //Creditos
+            botonCreditos = this.add.image(325, 540, "Creditos").setScale(2.2).setInteractive()
+            .on("pointerover", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonCreditos2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonCreditos2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                this.scene.start("Creditos");
+                this.scene.stop('Menu');
+                sonidoBoton.play();
+            });
+
+            botonCreditos2 = this.add.sprite(325, 540, "Creditos2").setScale(2.2).setVisible(false);
+        }
+
+        botonES = this.add.image(500, 620, "iconoES").setInteractive()
+        .on("pointerover", () => {
+            botonES2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonES2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonES2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            if (language != 0){
+                language = 0;
+                this.scene.restart("Menu");
+                sonidoBoton.play();
+            }
+            else {}
+        });
+
+        botonES2 = this.add.sprite(500, 620, "iconoES2").setVisible(false);
+
+        botonEN = this.add.image(560, 620, "iconoEN").setInteractive()
+        .on("pointerover", () => {
+            botonEN2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonEN2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonEN2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            if (language != 1){
+                language = 1;
+                this.scene.restart("Menu");
+                sonidoBoton.play();
+            }
+            else {}
+        });
+
+        botonEN2 = this.add.sprite(560, 620, "iconoEN2").setVisible(false);
+
+        botonPOR = this.add.image(620, 620, "iconoBR").setInteractive()
+        .on("pointerover", () => {
+            botonPOR2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonPOR2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonPOR2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            if (language != 2){
+                language = 2;
+                this.scene.restart("Menu");
+                sonidoBoton.play();
+            }
+            else {}
+        });
+
+        botonPOR2 = this.add.sprite(620, 620, "iconoBR2").setVisible(false);
+    }
+}

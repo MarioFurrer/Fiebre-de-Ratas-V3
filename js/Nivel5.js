@@ -1,0 +1,465 @@
+class Nivel5 extends Phaser.Scene{
+    constructor(){
+        super("Nivel5");
+    }
+
+    create(){
+        
+        currentLevel = 5;
+
+        musicaMenu.stop();
+
+        musicaIngame.play();
+
+        infeccion = 0;
+
+        valInfeccion = -1;
+
+        reload = 0;
+
+        muerteRatas = 0;
+
+        time = 70;
+
+        cronometro = this.time.addEvent({ delay: 1000, callback: this.cronometro, callbackScope: this, loop: true });
+
+        fondoLVL = this.add.sprite(325,325, "Escena3D");
+
+        this.anims.create({
+            key: 'lvl5',
+            frames: this.anims.generateFrameNumbers('Nivel5', { start: 0, end: 3 }),
+            frameRate: 3,
+            repeat: -1
+        });
+
+        fondoLVL.anims.play('lvl5', true);
+        
+
+        pauseButton = this.add.sprite(625, 25, "Pausa").setInteractive()
+        .on("pointerover", () => {
+            pauseButton2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            pauseButton2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            pauseButton2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            sonidoBoton.play();
+            this.scene.pause('Nivel5');
+            this.scene.launch("Pausa");
+        });
+
+        pauseButton2 = this.add.sprite(625, 25, "Pausa2").setVisible(false);
+
+        reloj = this.add.sprite(50, 600, "reloj").setScale(2);
+
+        this.anims.create({
+            key: 'reloj',
+            frames: this.anims.generateFrameNumbers('reloj', { start: 0, end: 7 }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        reloj.anims.play('reloj', true);
+
+        temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
+
+        personaje = this.physics.add.sprite(325,325, "Personaje").setScale(2.25).setImmovable(true);
+
+        cursor = this.input.keyboard.createCursorKeys();
+
+        this.barraInfeccion();
+
+        timer = this.time.addEvent({ delay: 100, callback: this.recarga, callbackScope: this, loop: true });
+
+        Balas = this.physics.add.group();
+
+        this.anims.create({
+            key: 'rata1',
+            frames: this.anims.generateFrameNumbers('rata', { start: 8, end: 11 }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'rata2',
+            frames: this.anims.generateFrameNumbers('rata', { start: 4, end: 7 }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'rata3',
+            frames: this.anims.generateFrameNumbers('rata', { start: 0, end: 3 }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        Ratas = this.physics.add.group({
+            key: 'Rata',
+            repeat: 5,
+        });
+
+        Ratas.children.iterate(function (Rata) {
+            Rata.setCollideWorldBounds(false);
+            Rata.setImmovable(true);
+
+            carril = Phaser.Math.FloatBetween(0, 1);
+
+            clase = Phaser.Math.FloatBetween(0, 1);
+
+            if (carril <= 0.24){
+                Rata.setY(Phaser.Math.FloatBetween(-100, -500));
+                Rata.setX(325);
+                if (clase <= 0.33){
+                    Rata.vida = 2;
+                    Rata.anims.play('rata1', true);
+                    Rata.setScale(1.7);
+                    Rata.body.setVelocityY(50);
+                }
+                else {
+                    if (carril <= 0.66){
+                        Rata.vida = 1;
+                        Rata.anims.play('rata2', true);
+                        Rata.setScale(1.5);
+                        Rata.body.setVelocityY(75);
+                    }
+                    else {
+                        Rata.vida = 3;
+                        Rata.anims.play('rata3', true);
+                        Rata.setScale(1.9);
+                        Rata.body.setVelocityY(30);
+                    }
+                }
+            }
+            else {
+                if (carril <= 0.49){
+                    Rata.angle = 180;
+                    Rata.setY(Phaser.Math.FloatBetween(660, 1000));
+                    Rata.setX(325);
+                    if (clase <= 0.33){
+                        Rata.vida = 2;
+                        Rata.anims.play('rata1', true);
+                        Rata.setScale(1.7);
+                        Rata.body.setVelocityY(-50);
+                    }
+                    else {
+                        if (carril <= 0.66){
+                            Rata.vida = 1;
+                            Rata.anims.play('rata2', true);
+                            Rata.setScale(1.5);
+                            Rata.body.setVelocityY(-75);
+                        }
+                        else {
+                            Rata.vida = 3;
+                            Rata.anims.play('rata3', true);
+                            Rata.setScale(1.9);
+                            Rata.body.setVelocityY(-30);
+                        }
+                    }
+                }
+                else {
+                    if (carril <= 0.74){
+                        Rata.angle = 270;
+                        Rata.setX(Phaser.Math.FloatBetween(-100, -500));
+                        Rata.setY(325);
+                        if (clase <= 0.33){
+                            Rata.vida = 2;
+                            Rata.anims.play('rata1', true);
+                            Rata.setScale(1.7);
+                            Rata.body.setVelocityX(50);
+                        }
+                        else {
+                            if (carril <= 0.66){
+                                Rata.vida = 1;
+                                Rata.anims.play('rata2', true);
+                                Rata.setScale(1.5);
+                                Rata.body.setVelocityX(75);
+                            }
+                            else {
+                                Rata.vida = 3;
+                                Rata.anims.play('rata3', true);
+                                Rata.setScale(1.9);
+                                Rata.body.setVelocityX(30);
+                            }
+                        }
+                    }
+                    else {
+                        Rata.angle = 90;
+                        Rata.setX(Phaser.Math.FloatBetween(660, 1000));
+                        Rata.setY(325);
+                        if (clase <= 0.33){
+                            Rata.vida = 2;
+                            Rata.anims.play('rata1', true);
+                            Rata.setScale(1.7);
+                            Rata.body.setVelocityX(-50);
+                        }
+                        else {
+                            if (clase <= 0.66){
+                                Rata.vida = 1;
+                                Rata.anims.play('rata2', true);
+                                Rata.setScale(1.5);
+                                Rata.body.setVelocityX(-75);
+                            }
+                            else {
+                                Rata.vida = 3;
+                                Rata.anims.play('rata3', true);
+                                Rata.setScale(1.9);
+                                Rata.body.setVelocityX(-30);
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+        this.physics.add.collider(Balas, Ratas, this.shootRata, null, this);
+
+        this.physics.add.collider(personaje, Ratas, this.hitPersonaje, null, this);
+    }
+
+    update(){
+        
+        temporizador.setText(time);
+
+        this.barraInfeccion();
+
+        if (time <= 0){
+            this.victory();
+        }
+
+        if(cursor.right.isDown){
+            personaje.angle = 179;
+        }
+        else if(cursor.left.isDown){
+            personaje.angle = 0;
+        }
+        else if(cursor.up.isDown){
+            personaje.angle = 90;
+        }
+        else if(cursor.down.isDown){
+            personaje.angle = -90;
+        }
+
+        if(cursor.space.isDown){
+            this.shoot();
+        }
+
+        if (Ratas.countActive(true) <= 6){
+
+            var Rata = Ratas.create(1000, 1000, 'Rata').setScale(1.5);
+            Rata.setCollideWorldBounds(false);
+            Rata.setImmovable(true);
+
+            carril = Phaser.Math.FloatBetween(0, 1);
+
+            clase = Phaser.Math.FloatBetween(0, 1);
+
+            if (carril <= 0.24){
+                Rata.setY(Phaser.Math.FloatBetween(-100, -500));
+                Rata.setX(325);
+                if (clase <= 0.33){
+                    Rata.vida = 2;
+                    Rata.anims.play('rata1', true);
+                    Rata.setScale(1.7);
+                    Rata.body.setVelocityY(50);
+                }
+                else {
+                    if (carril <= 0.66){
+                        Rata.vida = 1;
+                        Rata.anims.play('rata2', true);
+                        Rata.setScale(1.5);
+                        Rata.body.setVelocityY(75);
+                    }
+                    else {
+                        Rata.vida = 3;
+                        Rata.anims.play('rata3', true);
+                        Rata.setScale(1.9);
+                        Rata.body.setVelocityY(30);
+                    }
+                }
+            }
+            else {
+                if (carril <= 0.49){
+                    Rata.angle = 180;
+                    Rata.setY(Phaser.Math.FloatBetween(660, 1000));
+                    Rata.setX(325);
+                    if (clase <= 0.33){
+                        Rata.vida = 2;
+                        Rata.anims.play('rata1', true);
+                        Rata.setScale(1.7);
+                        Rata.body.setVelocityY(-50);
+                    }
+                    else {
+                        if (carril <= 0.66){
+                            Rata.vida = 1;
+                            Rata.anims.play('rata2', true);
+                            Rata.setScale(1.5);
+                            Rata.body.setVelocityY(-75);
+                        }
+                        else {
+                            Rata.vida = 3;
+                            Rata.anims.play('rata3', true);
+                            Rata.setScale(1.9);
+                            Rata.body.setVelocityY(-30);
+                        }
+                    }
+                }
+                else {
+                    if (carril <= 0.74){
+                        Rata.angle = 270;
+                        Rata.setX(Phaser.Math.FloatBetween(-100, -500));
+                        Rata.setY(325);
+                        if (clase <= 0.33){
+                            Rata.vida = 2;
+                            Rata.anims.play('rata1', true);
+                            Rata.setScale(1.7);
+                            Rata.body.setVelocityX(50);
+                        }
+                        else {
+                            if (carril <= 0.66){
+                                Rata.vida = 1;
+                                Rata.anims.play('rata2', true);
+                                Rata.setScale(1.5);
+                                Rata.body.setVelocityX(75);
+                            }
+                            else {
+                                Rata.vida = 3;
+                                Rata.anims.play('rata3', true);
+                                Rata.setScale(1.9);
+                                Rata.body.setVelocityX(30);
+                            }
+                        }
+                    }
+                    else {
+                        Rata.angle = 90;
+                        Rata.setX(Phaser.Math.FloatBetween(660, 1000));
+                        Rata.setY(325);
+                        if (clase <= 0.33){
+                            Rata.vida = 2;
+                            Rata.anims.play('rata1', true);
+                            Rata.setScale(1.7);
+                            Rata.body.setVelocityX(-50);
+                        }
+                        else {
+                            if (clase <= 0.66){
+                                Rata.vida = 1;
+                                Rata.anims.play('rata2', true);
+                                Rata.setScale(1.5);
+                                Rata.body.setVelocityX(-75);
+                            }
+                            else {
+                                Rata.vida = 3;
+                                Rata.anims.play('rata3', true);
+                                Rata.setScale(1.9);
+                                Rata.body.setVelocityX(-30);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    barraInfeccion(){
+
+        if(valInfeccion != infeccion){
+
+            if(infeccion == 0){this.add.sprite(90, 40, "Infeccion0").setScale(1.5);}
+        
+            if(infeccion == 1){this.add.sprite(90, 40, "Infeccion1").setScale(1.5);}
+
+            if(infeccion == 2){this.add.sprite(90, 40, "Infeccion2").setScale(1.5);}
+
+            if(infeccion == 3){this.add.sprite(90, 40, "Infeccion3").setScale(1.5);}
+
+            if(infeccion == 4){this.add.sprite(90, 40, "Infeccion4").setScale(1.5);}
+
+            if(infeccion == 5){this.add.sprite(90, 40, "Infeccion5").setScale(1.5);}
+
+            if(infeccion == 6){this.add.sprite(90, 40, "Infeccion6").setScale(1.5);}
+
+            if(infeccion == 7){this.add.sprite(90, 40, "Infeccion7").setScale(1.5);}
+
+            if(infeccion == 8){this.add.sprite(90, 40, "Infeccion8").setScale(1.5);}
+
+            if(infeccion == 9){this.add.sprite(90, 40, "Infeccion9").setScale(1.5);}
+
+            if(infeccion >= 10){
+                this.add.sprite(90, 40, "Infeccion10").setScale(1.5);
+                this.gameOver()
+            }
+
+            valInfeccion = infeccion;
+        }
+
+        else{}
+    }
+
+    cronometro(){
+        time = time - 1
+        if(time <= 19){
+            temporizador.setX(34);
+        }
+        if(time <= 9){
+            temporizador.setX(37);
+        }
+    }
+
+    shoot(){
+        if(reload <= 0){
+            if(personaje.angle == 179){
+                bala = Balas.create(350, 325, 'Bala').setScale(1.75);
+                bala.setVelocityX(200);
+                reload = .7;
+            }
+            if(personaje.angle == 0){
+                bala = Balas.create(300, 325, 'Bala').setScale(1.75);
+                bala.setVelocityX(-200);
+                reload = .7;
+            }
+            if(personaje.angle == 90){
+                bala = Balas.create(325, 300, 'Bala').setScale(1.75);
+                bala.setVelocityY(-200);
+                reload = .7;     
+            }
+            if(personaje.angle == -90){
+                bala = Balas.create(325, 350, 'Bala').setScale(1.75);
+                bala.setVelocityY(200);
+                reload = .7;
+            }
+        }
+        else {}
+    }
+
+    recarga(){
+        reload = reload - .1;
+    }
+
+    shootRata(Balas, Rata){
+        Rata.vida = Rata.vida - 1;
+        if (Rata.vida <= 0){
+            Rata.disableBody(true, true);
+            muerteRatas = muerteRatas + 1;
+        }
+        Balas.disableBody(true, true);
+    }
+
+    hitPersonaje(personaje, Rata){
+        infeccion = infeccion + 1;
+        Rata.disableBody(true, true);
+    }
+
+    victory(){
+        this.scene.pause();
+        this.scene.launch('Victoria');
+    }
+
+    gameOver(){
+        this.scene.pause();
+        this.scene.launch('Derrota');
+    }
+
+}
