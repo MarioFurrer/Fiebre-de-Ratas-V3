@@ -112,9 +112,9 @@ class UNRaf extends Phaser.Scene{
         });
         this.load.image("Pausa", "./assets/Images/botonPausa.png");
         this.load.image("Pausa2", "./assets/Images/botonPausa2.png");
-        this.load.image("Infeccion0", "assets/Images/barraInfeccion0.png");
-        this.load.image("Infeccion1", "assets/Images/barraInfeccion1.png");
-        this.load.image("Infeccion2", "assets/Images/barraInfeccion2.png");
+        this.load.image("Infeccion0", "assets/Images/barrainfeccion0.png");
+        this.load.image("Infeccion1", "assets/Images/barrainfeccion1.png");
+        this.load.image("Infeccion2", "assets/Images/barrainfeccion2.png");
         this.load.image("Infeccion3", "assets/Images/barrainfeccion3.png");
         this.load.image("Infeccion4", "assets/Images/barrainfeccion4.png");
         this.load.image("Infeccion5", "assets/Images/barrainfeccion5.png");
