@@ -228,9 +228,6 @@ class UNRaf extends Phaser.Scene{
             movil2.setVisible(true);
         })
         .on("pointerup", () => {
-            plataforma = 1;
-            this.scene.start("Menu");
-            musicaMenu.play();
         });
 
         movil2 = this.add.sprite(490, 500, "Movil2").setVisible(false);
