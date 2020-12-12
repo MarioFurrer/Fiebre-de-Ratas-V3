@@ -53,15 +53,6 @@ class Nivel2 extends Phaser.Scene{
         });
 
         reloj.anims.play('reloj', true);
-
-        this.anims.create({
-            key: 'tractor',
-            frames: this.anims.generateFrameNumbers('Tractor', { start: 0, end: 2 }),
-            frameRate: 5,
-            repeat: -1
-        });
-
-        /////////////////tractor.anims.play('tractor)////////////////////////////
         
         temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
 

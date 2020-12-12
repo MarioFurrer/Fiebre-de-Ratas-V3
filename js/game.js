@@ -80,7 +80,6 @@ var plataforma;
 var clase;
 var cronometro;
 var time;
-var tractor;
 
 //TEXTO
 var textoMaiz;
