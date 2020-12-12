@@ -115,14 +115,14 @@ class UNRaf extends Phaser.Scene{
         this.load.image("Infeccion0", "assets/Images/barraInfeccion0.png");
         this.load.image("Infeccion1", "assets/Images/barraInfeccion1.png");
         this.load.image("Infeccion2", "assets/Images/barraInfeccion2.png");
-        this.load.image("Infeccion3", "assets/Images/barraInfeccion3.png");
-        this.load.image("Infeccion4", "assets/Images/barraInfeccion4.png");
-        this.load.image("Infeccion5", "assets/Images/barraInfeccion5.png");
-        this.load.image("Infeccion6", "assets/Images/barraInfeccion6.png");
-        this.load.image("Infeccion7", "assets/Images/barraInfeccion7.png");
-        this.load.image("Infeccion8", "assets/Images/barraInfeccion8.png");
-        this.load.image("Infeccion9", "assets/Images/barraInfeccion9.png");
-        this.load.image("Infeccion10", "assets/Images/barraInfeccion10.png");
+        this.load.image("Infeccion3", "assets/Images/barrainfeccion3.png");
+        this.load.image("Infeccion4", "assets/Images/barrainfeccion4.png");
+        this.load.image("Infeccion5", "assets/Images/barrainfeccion5.png");
+        this.load.image("Infeccion6", "assets/Images/barrainfeccion6.png");
+        this.load.image("Infeccion7", "assets/Images/barrainfeccion7.png");
+        this.load.image("Infeccion8", "assets/Images/barrainfeccion8.png");
+        this.load.image("Infeccion9", "assets/Images/barrainfeccion9.png");
+        this.load.image("Infeccion10", "assets/Images/barrainfeccion10.png");
         this.load.image("Personaje", "./assets/Images/pj.png");
         this.load.spritesheet("rata", "./assets/Images/rataSpritesheet.png",{
             frameWidth: 9,
