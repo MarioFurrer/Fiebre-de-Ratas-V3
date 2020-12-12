@@ -58,6 +58,10 @@ var flechaI;
 var flechaI2;
 var flechaD;
 var flechaD2;
+var botonSonido;
+var botonSonido2;
+var botonMute;
+var botonMute2;
 
 //VALORES
 var currentLevel;

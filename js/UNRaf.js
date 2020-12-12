@@ -14,6 +14,11 @@ class UNRaf extends Phaser.Scene{
         //Menu
         this.load.image("Fondo", "assets/Images/fondoMenu.png");
 
+        this.load.image("botonSonido", "assets/Images/botonSonido.png");
+        this.load.image("botonSonido2", "assets/Images/botonSonido2.png");
+        this.load.image("botonMute", "assets/Images/botonMute.png");
+        this.load.image("botonMute2", "assets/Images/botonMute2.png");
+
         this.load.image("iconoES", "assets/Images/iconoES.png");
         this.load.image("iconoES2", "assets/Images/iconoES2.png");
         this.load.image("iconoEN", "assets/Images/iconoEN.png");

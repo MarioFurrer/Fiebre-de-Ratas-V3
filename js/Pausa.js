@@ -90,7 +90,7 @@ class Pausa extends Phaser.Scene {
 
         restart2 = this.add.sprite(325, 350, "Restart2").setScale(1.5).setVisible(false);
 
-        menuButton = this.add.sprite(325, 435, "Menu").setScale(1.5).setInteractive()
+        menuButton = this.add.sprite(275, 435, "Menu").setScale(1.5).setInteractive()
         .on("pointerover", () => {
             menuButton2.setVisible(true);
         })
@@ -126,6 +126,53 @@ class Pausa extends Phaser.Scene {
             this.scene.stop('Pausa');
         });
 
-        menuButton2 = this.add.sprite(325, 435, "Menu2").setScale(1.5).setVisible(false);
+        menuButton2 = this.add.sprite(275, 435, "Menu2").setScale(1.5).setVisible(false);
+
+        botonSonido = this.add.sprite(375, 435, "botonSonido").setScale(1.5).setInteractive()
+        .on("pointerover", () => {
+            botonSonido2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonSonido2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonSonido2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            sonidoBoton.play();
+            game.sound.mute = false;
+        });
+
+        botonSonido2 = this.add.sprite(375, 435, "botonSonido2").setScale(1.5).setVisible(false);
+
+        botonMute = this.add.sprite(375, 435, "botonMute").setScale(1.5).setInteractive()
+        .on("pointerover", () => {
+            botonMute2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonMute2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonMute2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            sonidoBoton.play();
+            game.sound.mute = true;
+        });
+
+        botonMute2 = this.add.sprite(375, 435, "botonMute2").setScale(1.5).setVisible(false);
+    }
+
+    update(){
+        if(game.sound.mute == false){
+            botonMute.setVisible(true).setInteractive(true);
+            botonSonido.setVisible(false).setInteractive(false);
+            botonSonido2.setVisible(false);
+        }
+        if(game.sound.mute == true){
+            botonMute.setVisible(false).setInteractive(false);
+            botonMute2.setVisible(false);
+            botonSonido.setVisible(true).setInteractive(true);
+        }
     }
 }
