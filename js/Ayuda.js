@@ -30,6 +30,40 @@ class Ayuda extends Phaser.Scene{
 
         menuButton2 = this.add.sprite(35, 35, "Menu2").setScale(1.5).setVisible(false);
 
+        botonSonido = this.add.sprite(615, 35, "botonSonido").setScale(1.5).setInteractive()
+        .on("pointerover", () => {
+            botonSonido2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonSonido2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonSonido2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            sonidoBoton.play();
+            game.sound.mute = false;
+        });
+
+        botonSonido2 = this.add.sprite(615, 35, "botonSonido2").setScale(1.5).setVisible(false);
+
+        botonMute = this.add.sprite(615, 35, "botonMute").setScale(1.5).setInteractive()
+        .on("pointerover", () => {
+            botonMute2.setVisible(true);
+        })
+        .on("pointerout", () => {
+            botonMute2.setVisible(false);
+        })
+        .on("pointerdown", () => {
+            botonMute2.setVisible(true);
+        })
+        .on("pointerup", () => {
+            sonidoBoton.play();
+            game.sound.mute = true;
+        });
+
+        botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
+
         if(plataforma == 0){
 
             this.add.image(325, 350, "cartel").setScale(1.9);
@@ -116,7 +150,19 @@ class Ayuda extends Phaser.Scene{
                 bala.disableBody(true, true);
             }
         })
+
+        if(game.sound.mute == false){
+            botonMute.setVisible(true).setInteractive(true);
+            botonSonido.setVisible(false).setInteractive(false);
+            botonSonido2.setVisible(false);
+        }
+        if(game.sound.mute == true){
+            botonMute.setVisible(false).setInteractive(false);
+            botonMute2.setVisible(false);
+            botonSonido.setVisible(true).setInteractive(true);
+        }
     }
+    
 
     shoot(){
         if(reload <= 0){

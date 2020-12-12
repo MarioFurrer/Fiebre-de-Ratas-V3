@@ -54,6 +54,15 @@ class Nivel2 extends Phaser.Scene{
 
         reloj.anims.play('reloj', true);
 
+        this.anims.create({
+            key: 'tractor',
+            frames: this.anims.generateFrameNumbers('Tractor', { start: 0, end: 2 }),
+            frameRate: 5,
+            repeat: -1
+        });
+
+        /////////////////tractor.anims.play('tractor)////////////////////////////
+        
         temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
 
         personaje = this.physics.add.sprite(325,325, "Personaje").setScale(2.25).setImmovable(true);
@@ -429,10 +438,11 @@ class Nivel2 extends Phaser.Scene{
     }
 
     shootRata(Balas, Rata){
+        hitRata.play({volume: 0.5});
         Rata.vida = Rata.vida - 1;
         if (Rata.vida <= 0){
+            rataAhuyentada.play();
             Rata.disableBody(true, true);
-            muerteRatas = muerteRatas + 1;
         }
         Balas.disableBody(true, true);
     }

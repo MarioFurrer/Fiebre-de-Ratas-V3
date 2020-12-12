@@ -439,10 +439,11 @@ class Nivel5 extends Phaser.Scene{
     }
 
     shootRata(Balas, Rata){
+        hitRata.play({volume: 0.5});
         Rata.vida = Rata.vida - 1;
         if (Rata.vida <= 0){
+            rataAhuyentada.play();
             Rata.disableBody(true, true);
-            muerteRatas = muerteRatas + 1;
         }
         Balas.disableBody(true, true);
     }

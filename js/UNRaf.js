@@ -89,6 +89,10 @@ class UNRaf extends Phaser.Scene{
         this.load.image("Escena1N2", "./assets/Images/escena1N2.png");
         this.load.image("Escena2D", "./assets/Images/escena2D.png");
         this.load.image("Escena2D2", "./assets/Images/escena2D2.png");
+        this.load.spritesheet("Tractor", "./assets/Images/tractorSS.png",{
+            frameWidth: 80,
+            frameHeight: 110,
+        });
         this.load.spritesheet("Nivel3", "./assets/Images/Nivel3SS.png",{
             frameWidth: 650,
             frameHeight: 650,
