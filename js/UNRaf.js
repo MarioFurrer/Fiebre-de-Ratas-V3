@@ -67,8 +67,8 @@ class UNRaf extends Phaser.Scene{
         this.load.image('keyDOWN', 'assets/Images/keyDOWN.png');
         this.load.image('keyLEFT', 'assets/Images/keyLEFT.png');
         this.load.image('keyRIGHT', 'assets/Images/keyRIGHT.png');
-        this.load.image('keySB', 'assets/images/keySB.png');
-        this.load.image('keySB2', 'assets/images/keySB2.png');
+        this.load.image('keySB', 'assets/Images/keySB.png');
+        this.load.image('keySB2', 'assets/Images/keySB2.png');
 
         //Creditos
 
