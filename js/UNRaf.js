@@ -106,7 +106,7 @@ class UNRaf extends Phaser.Scene{
             frameWidth: 650,
             frameHeight: 650,
         });
-        this.load.spritesheet("reloj", "./assets/Images/relojSS.png",{
+        this.load.spritesheet("reloj", "./assets/Images/RelojSS.png",{
             frameWidth: 34,
             frameHeight: 34,
         });
