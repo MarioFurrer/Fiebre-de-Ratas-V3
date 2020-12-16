@@ -190,6 +190,8 @@ class SeleccionLvL extends Phaser.Scene{
 
             this.add.image(325, 500, "BGMobile");
 
+            this.add.image(325, 500, "oscurecidoMobile");
+
             this.add.image(325, 525, "cartel").setScale(2.2);
 
             menuButton = this.add.sprite(50, 50, "Menu").setScale(2).setInteractive()
@@ -245,15 +247,15 @@ class SeleccionLvL extends Phaser.Scene{
             botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
 
             if(language == 0){
-                this.add.bitmapText(170, 80, "pixelFont", 'Seleccion de nivel', 70);
+                this.add.bitmapText(110, 150, "pixelFont", 'Seleccion de nivel', 70);
             }
           
             if(language == 1){
-                this.add.bitmapText(200, 80, "pixelFont", 'Level selection', 50);
+                this.add.bitmapText(150, 150, "pixelFont", 'Level selection', 70);
             }
           
             if(language == 2){
-                this.add.bitmapText(180, 80, "pixelFont", 'Selecao de nivel', 50);
+                this.add.bitmapText(130, 150, "pixelFont", 'Selecao de nivel', 70);
             }
 
             this.add.image(200, 325, "Escena1D").setScale(.27).setInteractive()
