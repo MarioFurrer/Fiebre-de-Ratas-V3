@@ -164,7 +164,6 @@ class Victoria extends Phaser.Scene {
         if (currentLevel == 6){
           this.scene.stop("Nivel6");
         }
-        game.resize(650,650);
         this.scene.start('Menu');
       });
   

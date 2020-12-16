@@ -195,7 +195,6 @@ class Derrota extends Phaser.Scene {
                     this.scene.stop("Nivel6");
                 }
                 this.scene.start('Menu');
-                game.resize(650,650);
             });
     
             menuButton2 = this.add.sprite(410, 450, "Menu2").setScale(2.4).setVisible(false);
