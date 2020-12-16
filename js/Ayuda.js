@@ -103,6 +103,8 @@ class Ayuda extends Phaser.Scene{
 
             this.add.image(325, 500, "BGMobile");
 
+            this.scene.launch("Mobile");
+
             this.add.image(325, 350, "cartel").setScale(1.9);
 
             menuButton = this.add.sprite(50, 50, "Menu").setScale(2).setInteractive()
@@ -157,8 +159,6 @@ class Ayuda extends Phaser.Scene{
             });
 
             botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
-
-            this.scene.launch("Mobile");
 
             personaje = this.physics.add.sprite(325,425, "Personaje").setScale(2.25).setImmovable(true);
 
