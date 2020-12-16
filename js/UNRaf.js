@@ -13,6 +13,7 @@ class UNRaf extends Phaser.Scene{
 
         //Menu
         this.load.image("Fondo", "assets/Images/fondoMenu.png");
+        this.load.image("BGMobile", "assets/Images/menuMobile.png");
 
         this.load.image("botonSonido", "assets/Images/botonSonido.png");
         this.load.image("botonSonido2", "assets/Images/botonSonido2.png");
@@ -242,6 +243,7 @@ class UNRaf extends Phaser.Scene{
         })
         .on("pointerup", () => {
             plataforma = 1;
+            game.resize(650,1000);
             this.scene.start("Menu");
             musicaMenu.play({volume: 0.8});
         });
