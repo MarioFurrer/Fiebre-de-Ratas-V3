@@ -9,7 +9,7 @@ class Mobile extends Phaser.Scene{
 
         this.add.image(325, 825, "fondoMobile");
 
-        flechaUP = this.add.sprite(175, 775, "flechaUP").setScale(3).setInteractive()
+        flechaUP = this.add.sprite(175, 765, "flechaUP").setScale(5).setInteractive()
         .on("pointerout", () => {
             flechaUP2.setVisible(false);
         })
@@ -21,9 +21,9 @@ class Mobile extends Phaser.Scene{
             flechaUP2.setVisible(false);
         });
 
-        flechaUP2 = this.add.sprite(175, 775, "flechaUP2").setScale(3).setVisible(false);
+        flechaUP2 = this.add.sprite(175, 765, "flechaUP2").setScale(5).setVisible(false);
 
-        flechaDOWN = this.add.sprite(175, 875, "flechaDOWN").setScale(3).setInteractive()
+        flechaDOWN = this.add.sprite(175, 885, "flechaDOWN").setScale(5).setInteractive()
         .on("pointerout", () => {
             flechaDOWN2.setVisible(false);
         })
@@ -35,9 +35,9 @@ class Mobile extends Phaser.Scene{
             flechaDOWN2.setVisible(false);
         });
 
-        flechaDOWN2 = this.add.sprite(175, 875, "flechaDOWN2").setScale(3).setVisible(false);
+        flechaDOWN2 = this.add.sprite(175, 885, "flechaDOWN2").setScale(5).setVisible(false);
 
-        flechaLEFT = this.add.sprite(125, 825, "flechaLEFT").setScale(3).setInteractive()
+        flechaLEFT = this.add.sprite(115, 825, "flechaLEFT").setScale(5).setInteractive()
         .on("pointerout", () => {
             flechaLEFT2.setVisible(false);
         })
@@ -49,9 +49,9 @@ class Mobile extends Phaser.Scene{
             flechaLEFT2.setVisible(false);
         });
 
-        flechaLEFT2 = this.add.sprite(125, 825, "flechaLEFT2").setScale(3).setVisible(false);
+        flechaLEFT2 = this.add.sprite(115, 825, "flechaLEFT2").setScale(5).setVisible(false);
 
-        flechaRIGHT = this.add.sprite(225, 825, "flechaRIGHT").setScale(3).setInteractive()
+        flechaRIGHT = this.add.sprite(235, 825, "flechaRIGHT").setScale(5).setInteractive()
         .on("pointerout", () => {
             flechaRIGHT2.setVisible(false);
         })
@@ -63,9 +63,9 @@ class Mobile extends Phaser.Scene{
             flechaRIGHT2.setVisible(false);
         });
 
-        flechaRIGHT2 = this.add.sprite(225, 825, "flechaRIGHT2").setScale(3).setVisible(false);
+        flechaRIGHT2 = this.add.sprite(235, 825, "flechaRIGHT2").setScale(5).setVisible(false);
 
-        botonSHOOT = this.add.sprite(475, 825, "botonDisparo").setScale(3).setInteractive()
+        botonSHOOT = this.add.sprite(475, 825, "botonDisparo").setScale(5).setInteractive()
         .on("pointerout", () => {
             botonSHOOT2.setVisible(false);
         })
@@ -78,6 +78,6 @@ class Mobile extends Phaser.Scene{
             buttonDown = false;
         });
 
-        botonSHOOT2 = this.add.sprite(475, 825, "botonDisparo2").setScale(3).setVisible(false);
+        botonSHOOT2 = this.add.sprite(475, 825, "botonDisparo2").setScale(5).setVisible(false);
     }
 }
