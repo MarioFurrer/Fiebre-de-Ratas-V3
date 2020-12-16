@@ -2,7 +2,7 @@ var config = {
     type: Phaser.AUTO,
     parent: null,
     width: 650,
-    height: 650,
+    height: 1000,
     physics: {
         default: "arcade",
         arcade: {
@@ -10,7 +10,7 @@ var config = {
         }
     },
 
-    scene: [UNRaf, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota]
+    scene: [UNRaf, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota, Mobile]
 };
 
 var game = new Phaser.Game(config);
@@ -62,6 +62,16 @@ var botonSonido;
 var botonSonido2;
 var botonMute;
 var botonMute2;
+var flechaUP;
+var flechaUP2;
+var flechaDOWN;
+var flechaDOWN2;
+var flechaLEFT;
+var flechaLEFT2;
+var flechaRIGHT;
+var flechaRIGHT2;
+var botonSHOOT;
+var botonSHOOT2;
 
 //VALORES
 var currentLevel;
@@ -80,6 +90,7 @@ var plataforma;
 var clase;
 var cronometro;
 var time;
+var buttonDown;
 
 //TEXTO
 var textoMaiz;

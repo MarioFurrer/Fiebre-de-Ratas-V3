@@ -24,6 +24,7 @@ class Ayuda extends Phaser.Scene{
         })
         .on("pointerup", () => {
             sonidoBoton.play();
+            game.resize(650,650);
             this.scene.start("Menu");
             this.scene.stop("Creditos");
         });
@@ -64,9 +65,9 @@ class Ayuda extends Phaser.Scene{
 
         botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
 
-        if(plataforma == 0){
+        this.add.image(325, 350, "cartel").setScale(1.9);
 
-            this.add.image(325, 350, "cartel").setScale(1.9);
+        if(plataforma == 0){
 
             personaje = this.physics.add.sprite(425,425, "Personaje").setScale(2.25).setImmovable(true);
 
@@ -98,57 +99,91 @@ class Ayuda extends Phaser.Scene{
 
             
         }
-        else{
-            
+        if(plataforma == 1){
+
+            this.scene.launch("Mobile");
+
+            personaje = this.physics.add.sprite(325,425, "Personaje").setScale(2.25).setImmovable(true);
+
+            if(language == 0){
+                this.add.bitmapText(125, 150, "pixelFont", 'Usa las FLECHAS para girar al granjero', 30);
+                this.add.bitmapText(200, 200, "pixelFont", 'y el BOTON para disparar', 30);
+            }
+          
+            if(language == 1){
+                this.add.bitmapText(125, 150, "pixelFont", 'Use the ARROWS to rotate the farmer', 30);
+                this.add.bitmapText(200, 200, "pixelFont", 'and the BUTTON to shoot', 30);
+            }
+          
+            if(language == 2){
+                this.add.bitmapText(130, 150, "pixelFont", 'Use as SETAS para virar o fazendeiro', 30);
+                this.add.bitmapText(225, 200, "pixelFont", 'e o BOTAO para atirar', 30);
+            }
         }
     }
 
     update(){
 
-        if(cursor.right.isDown){
-            keyRIGHT.setVisible(true);
-            personaje.angle = 179;
+        if(plataforma == 0){
+
+            if(cursor.right.isDown){
+                keyRIGHT.setVisible(true);
+                personaje.angle = 179;
+            }
+            else{
+                keyRIGHT.setVisible(false);
+            }
+            
+            if(cursor.left.isDown){
+                keyLEFT.setVisible(true);
+                personaje.angle = 0;
+            }
+            else{
+                keyLEFT.setVisible(false);
+            }
+            
+            if(cursor.up.isDown){
+                keyUP.setVisible(true);
+                personaje.angle = 90;
+            }
+            else{
+                keyUP.setVisible(false);
+            }
+            
+            if(cursor.down.isDown){
+                keyDOWN.setVisible(true);
+                personaje.angle = -90;
+            }
+            else{
+                keyDOWN.setVisible(false);
+            }
+            
+            if(cursor.space.isDown){
+                keySB.setVisible(true);
+                this.shoot();
+            }
+            else{
+                keySB.setVisible(false);
+            }
+
         }
-        else{
-            keyRIGHT.setVisible(false);
-        }
-        
-        if(cursor.left.isDown){
-            keyLEFT.setVisible(true);
-            personaje.angle = 0;
-        }
-        else{
-            keyLEFT.setVisible(false);
-        }
-        
-        if(cursor.up.isDown){
-            keyUP.setVisible(true);
-            personaje.angle = 90;
-        }
-        else{
-            keyUP.setVisible(false);
-        }
-        
-        if(cursor.down.isDown){
-            keyDOWN.setVisible(true);
-            personaje.angle = -90;
-        }
-        else{
-            keyDOWN.setVisible(false);
-        }
-        
-        if(cursor.space.isDown){
-            keySB.setVisible(true);
+
+        if(buttonDown == true){
             this.shoot();
-        }
-        else{
-            keySB.setVisible(false);
         }
 
         Balas.children.each(function(bala) {
-            if(bala.x <= 310 || bala.x >= 550 || bala.y <= 230 || bala.y >= 600){                
-                bala.disableBody(true, true);
+            if(plataforma == 0){
+                if(bala.x <= 310 || bala.x >= 550 || bala.y <= 230 || bala.y >= 600){                
+                    bala.disableBody(true, true);
+                }
             }
+            else{
+                if(bala.x <= 100 || bala.x >= 550 || bala.y <= 230 || bala.y >= 600){                
+                    bala.disableBody(true, true);
+                }
+            }
+            
         })
 
         if(game.sound.mute == false){
@@ -167,22 +202,43 @@ class Ayuda extends Phaser.Scene{
     shoot(){
         if(reload <= 0){
             if(personaje.angle == 179){
-                bala = Balas.create(450, 425, 'Bala').setScale(1.75);
+                if(plataforma == 0){
+                    bala = Balas.create(450, 425, 'Bala').setScale(1.75);
+                }
+                else{
+                    bala = Balas.create(350, 425, 'Bala').setScale(1.75);
+                }
                 bala.setVelocityX(200);
                 reload = .7;
+                
             }
             if(personaje.angle == 0){
-                bala = Balas.create(400, 425, 'Bala').setScale(1.75);
+                if(plataforma == 0){
+                    bala = Balas.create(400, 425, 'Bala').setScale(1.75);
+                }
+                else{
+                    bala = Balas.create(300, 425, 'Bala').setScale(1.75);
+                }
                 bala.setVelocityX(-200);
                 reload = .7;
             }
             if(personaje.angle == 90){
-                bala = Balas.create(425, 400, 'Bala').setScale(1.75);
+                if(plataforma == 0){
+                    bala = Balas.create(425, 400, 'Bala').setScale(1.75);
+                }
+                else{
+                    bala = Balas.create(325, 400, 'Bala').setScale(1.75);
+                }
                 bala.setVelocityY(-200);
                 reload = .7;     
             }
             if(personaje.angle == -90){
-                bala = Balas.create(425, 450, 'Bala').setScale(1.75);
+                if(plataforma == 0){
+                    bala = Balas.create(425, 450, 'Bala').setScale(1.75);
+                }
+                else{
+                    bala = Balas.create(325, 450, 'Bala').setScale(1.75);
+                }
                 bala.setVelocityY(200);
                 reload = .7;
             }

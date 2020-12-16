@@ -74,6 +74,17 @@ class UNRaf extends Phaser.Scene{
         this.load.image('keyRIGHT', 'assets/Images/keyRIGHT.png');
         this.load.image('keySB', 'assets/Images/keySB.png');
         this.load.image('keySB2', 'assets/Images/keySB2.png');
+        this.load.image('flechaUP', 'assets/Images/Arriba.png');
+        this.load.image('flechaUP2', 'assets/Images/Arriba2.png');
+        this.load.image('flechaDOWN', 'assets/Images/Abajo.png');
+        this.load.image('flechaDOWN2', 'assets/Images/Abajo2.png');
+        this.load.image('flechaLEFT', 'assets/Images/Izquierda.png');
+        this.load.image('flechaLEFT2', 'assets/Images/Izquierda2.png');
+        this.load.image('flechaRIGHT', 'assets/Images/Derecha.png');
+        this.load.image('flechaRIGHT2', 'assets/Images/Derecha2.png');
+        this.load.image('botonDisparo', 'assets/Images/botonDisparo.png');
+        this.load.image('botonDisparo2', 'assets/Images/botonDisparo2.png');
+        this.load.image('fondoMobile', 'assets/Images/fondoMobile.png');
 
         //Creditos
 
@@ -178,6 +189,8 @@ class UNRaf extends Phaser.Scene{
 
     create(){
 
+        game.resize(650,650);
+
         //Música Menu Principal
         musicaMenu = this.sound.add("musicaMenu" , {loop: true});
 
@@ -228,6 +241,9 @@ class UNRaf extends Phaser.Scene{
             movil2.setVisible(true);
         })
         .on("pointerup", () => {
+            plataforma = 1;
+            this.scene.start("Menu");
+            musicaMenu.play({volume: 0.8});
         });
 
         movil2 = this.add.sprite(490, 500, "Movil2").setVisible(false);

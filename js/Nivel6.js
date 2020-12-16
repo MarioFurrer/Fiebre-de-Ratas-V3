@@ -4,6 +4,10 @@ class Nivel6 extends Phaser.Scene{
     }
 
     create(){
+
+        if(plataforma == 1){
+            this.scene.launch("Mobile");
+        }
         
         currentLevel = 6;
 
@@ -225,6 +229,10 @@ class Nivel6 extends Phaser.Scene{
         temporizador.setText(time);
 
         this.barraInfeccion();
+
+        if(buttonDown == true){
+            this.shoot();
+        }
 
         if (time <= 0){
             this.victory();

@@ -4,6 +4,8 @@ class Derrota extends Phaser.Scene {
     }
     
     create(){
+
+        this.scene.stop('Mobile');
           
         musicaIngame.stop();
 
@@ -97,6 +99,7 @@ class Derrota extends Phaser.Scene {
                 this.scene.stop("Nivel6");
             }
             this.scene.start('Menu');
+            game.resize(650,650);
         });
 
         menuButton2 = this.add.sprite(380, 410, "Menu2").setScale(1.2).setVisible(false);
