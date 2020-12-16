@@ -358,6 +358,7 @@ class Menu extends Phaser.Scene{
 
             botonPOR2 = this.add.sprite(620, 620, "iconoBR2").setVisible(false);
         }
+
         if(plataforma == 1){
 
             this.add.image(325, 500, "BGMobile");
@@ -397,6 +398,7 @@ class Menu extends Phaser.Scene{
             });
 
             botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
+            
             // Español
             if (language == 0){
             

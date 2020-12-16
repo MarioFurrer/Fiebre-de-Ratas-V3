@@ -24,9 +24,9 @@ class Ayuda extends Phaser.Scene{
         })
         .on("pointerup", () => {
             sonidoBoton.play();
-            game.resize(650,650);
             this.scene.start("Menu");
-            this.scene.stop("Creditos");
+            this.scene.stop("Mobile");
+            this.scene.stop("Ayuda");
         });
 
         menuButton2 = this.add.sprite(35, 35, "Menu2").setScale(1.5).setVisible(false);
