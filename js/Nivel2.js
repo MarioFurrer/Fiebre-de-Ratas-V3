@@ -29,25 +29,56 @@ class Nivel2 extends Phaser.Scene{
 
         fondoLVL = this.add.sprite(325,325, "Escena1N");
 
-        pauseButton = this.add.sprite(625, 25, "Pausa").setInteractive()
-        .on("pointerover", () => {
-            pauseButton2.setVisible(true);
-        })
-        .on("pointerout", () => {
-            pauseButton2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            pauseButton2.setVisible(true);
-        })
-        .on("pointerup", () => {
-            sonidoBoton.play();
-            this.scene.pause('Nivel2');
-            this.scene.launch("Pausa");
-        });
+        if(plataforma == 0){
 
-        pauseButton2 = this.add.sprite(625, 25, "Pausa2").setVisible(false);
+            pauseButton = this.add.sprite(625, 25, "Pausa").setInteractive()
+            .on("pointerover", () => {
+                pauseButton2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                pauseButton2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                pauseButton2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                this.scene.pause('Nivel2');
+                this.scene.launch("Pausa");
+            });
 
-        reloj = this.add.sprite(50, 600, "reloj").setScale(2);
+            pauseButton2 = this.add.sprite(625, 25, "Pausa2").setVisible(false);
+
+            reloj = this.add.sprite(50, 600, "reloj").setScale(2);
+
+            temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
+
+        }
+
+        if(plataforma == 1){
+
+            pauseButton = this.add.sprite(615, 35, "Pausa").setScale(2).setInteractive()
+            .on("pointerover", () => {
+                pauseButton2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                pauseButton2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                pauseButton2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                this.scene.pause('Nivel2');
+                this.scene.launch("Pausa");
+            });
+
+            pauseButton2 = this.add.sprite(615, 35, "Pausa2").setScale(2).setVisible(false);
+
+            reloj = this.add.sprite(75, 575, "reloj").setScale(3.5);
+
+            temporizador = this.add.bitmapText(40, 550, "pixelFont", time, 75);
+        }
 
         this.anims.create({
             key: 'reloj',
@@ -57,8 +88,6 @@ class Nivel2 extends Phaser.Scene{
         });
 
         reloj.anims.play('reloj', true);
-        
-        temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
 
         personaje = this.physics.add.sprite(325,325, "Personaje").setScale(2.25).setImmovable(true);
 
@@ -365,44 +394,85 @@ class Nivel2 extends Phaser.Scene{
 
         if(valInfeccion != infeccion){
 
-            if(infeccion == 0){this.add.sprite(90, 40, "Infeccion0").setScale(1.5);}
+            if(plataforma == 0){
+
+                if(infeccion == 0){this.add.sprite(90, 40, "Infeccion0").setScale(1.5);}
         
-            if(infeccion == 1){this.add.sprite(90, 40, "Infeccion1").setScale(1.5);}
+                if(infeccion == 1){this.add.sprite(90, 40, "Infeccion1").setScale(1.5);}
 
-            if(infeccion == 2){this.add.sprite(90, 40, "Infeccion2").setScale(1.5);}
+                if(infeccion == 2){this.add.sprite(90, 40, "Infeccion2").setScale(1.5);}
 
-            if(infeccion == 3){this.add.sprite(90, 40, "Infeccion3").setScale(1.5);}
+                if(infeccion == 3){this.add.sprite(90, 40, "Infeccion3").setScale(1.5);}
 
-            if(infeccion == 4){this.add.sprite(90, 40, "Infeccion4").setScale(1.5);}
+                if(infeccion == 4){this.add.sprite(90, 40, "Infeccion4").setScale(1.5);}
 
-            if(infeccion == 5){this.add.sprite(90, 40, "Infeccion5").setScale(1.5);}
+                if(infeccion == 5){this.add.sprite(90, 40, "Infeccion5").setScale(1.5);}
 
-            if(infeccion == 6){this.add.sprite(90, 40, "Infeccion6").setScale(1.5);}
+                if(infeccion == 6){this.add.sprite(90, 40, "Infeccion6").setScale(1.5);}
 
-            if(infeccion == 7){this.add.sprite(90, 40, "Infeccion7").setScale(1.5);}
+                if(infeccion == 7){this.add.sprite(90, 40, "Infeccion7").setScale(1.5);}
 
-            if(infeccion == 8){this.add.sprite(90, 40, "Infeccion8").setScale(1.5);}
+                if(infeccion == 8){this.add.sprite(90, 40, "Infeccion8").setScale(1.5);}
 
-            if(infeccion == 9){this.add.sprite(90, 40, "Infeccion9").setScale(1.5);}
+                if(infeccion == 9){this.add.sprite(90, 40, "Infeccion9").setScale(1.5);}
 
-            if(infeccion >= 10){
-                this.add.sprite(90, 40, "Infeccion10").setScale(1.5);
-                this.gameOver()
+                if(infeccion >= 10){
+                    this.add.sprite(90, 40, "Infeccion10").setScale(1.5);
+                    this.gameOver()
+                }
             }
 
+            if(plataforma == 1){
+
+                if(infeccion == 0){this.add.sprite(120, 40, "Infeccion0").setScale(2.5);}
+        
+                if(infeccion == 1){this.add.sprite(120, 40, "Infeccion1").setScale(2.5);}
+
+                if(infeccion == 2){this.add.sprite(120, 40, "Infeccion2").setScale(2.5);}
+
+                if(infeccion == 3){this.add.sprite(120, 40, "Infeccion3").setScale(2.5);}
+
+                if(infeccion == 4){this.add.sprite(120, 40, "Infeccion4").setScale(2.5);}
+
+                if(infeccion == 5){this.add.sprite(120, 40, "Infeccion5").setScale(2.5);}
+
+                if(infeccion == 6){this.add.sprite(120, 40, "Infeccion6").setScale(2.5);}
+
+                if(infeccion == 7){this.add.sprite(120, 40, "Infeccion7").setScale(2.5);}
+
+                if(infeccion == 8){this.add.sprite(120, 40, "Infeccion8").setScale(2.5);}
+
+                if(infeccion == 9){this.add.sprite(120, 40, "Infeccion9").setScale(2.5);}
+
+                if(infeccion >= 10){
+                    this.add.sprite(120, 40, "Infeccion10").setScale(2.5);
+                    this.gameOver()
+                }
+            }
             valInfeccion = infeccion;
         }
-
-        else{}
     }
 
     cronometro(){
         time = time - 1
-        if(time <= 19){
-            temporizador.setX(34);
+        if(plataforma == 0){
+
+            if(time <= 19){
+                temporizador.setX(34);
+            }
+            if(time <= 9){
+                temporizador.setX(37);
+            }
+
         }
-        if(time <= 9){
-            temporizador.setX(37);
+        if(plataforma == 1){
+
+            if(time <= 19){
+                temporizador.setX(50);
+            }
+            if(time <= 9){
+                temporizador.setX(55);
+            }
         }
     }
 

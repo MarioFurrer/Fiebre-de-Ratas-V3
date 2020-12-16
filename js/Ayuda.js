@@ -4,7 +4,6 @@ class Ayuda extends Phaser.Scene{
     }
 
     create(){
-        this.add.image(325, 325, "Fondo");
 
         reload = 0;
 
@@ -12,62 +11,64 @@ class Ayuda extends Phaser.Scene{
 
         Balas = this.physics.add.group();
 
-        menuButton = this.add.sprite(35, 35, "Menu").setScale(1.5).setInteractive()
-        .on("pointerover", () => {
-            menuButton2.setVisible(true);
-        })
-        .on("pointerout", () => {
-            menuButton2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            menuButton2.setVisible(true);
-        })
-        .on("pointerup", () => {
-            sonidoBoton.play();
-            this.scene.start("Menu");
-            this.scene.stop("Mobile");
-            this.scene.stop("Ayuda");
-        });
-
-        menuButton2 = this.add.sprite(35, 35, "Menu2").setScale(1.5).setVisible(false);
-
-        botonSonido = this.add.sprite(615, 35, "botonSonido").setScale(1.5).setInteractive()
-        .on("pointerover", () => {
-            botonSonido2.setVisible(true);
-        })
-        .on("pointerout", () => {
-            botonSonido2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            botonSonido2.setVisible(true);
-        })
-        .on("pointerup", () => {
-            sonidoBoton.play();
-            game.sound.mute = false;
-        });
-
-        botonSonido2 = this.add.sprite(615, 35, "botonSonido2").setScale(1.5).setVisible(false);
-
-        botonMute = this.add.sprite(615, 35, "botonMute").setScale(1.5).setInteractive()
-        .on("pointerover", () => {
-            botonMute2.setVisible(true);
-        })
-        .on("pointerout", () => {
-            botonMute2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            botonMute2.setVisible(true);
-        })
-        .on("pointerup", () => {
-            sonidoBoton.play();
-            game.sound.mute = true;
-        });
-
-        botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
-
-        this.add.image(325, 350, "cartel").setScale(1.9);
-
         if(plataforma == 0){
+
+            this.add.image(325, 325, "Fondo");
+
+            this.add.image(325, 350, "cartel").setScale(1.9);
+
+            menuButton = this.add.sprite(35, 35, "Menu").setScale(1.5).setInteractive()
+            .on("pointerover", () => {
+                menuButton2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                menuButton2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                menuButton2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                this.scene.start("Menu");
+                this.scene.stop("Mobile");
+                this.scene.stop("Ayuda");
+            });
+
+            menuButton2 = this.add.sprite(35, 35, "Menu2").setScale(1.5).setVisible(false);
+
+            botonSonido = this.add.sprite(615, 35, "botonSonido").setScale(1.5).setInteractive()
+            .on("pointerover", () => {
+                botonSonido2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonSonido2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonSonido2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                game.sound.mute = false;
+            });
+
+            botonSonido2 = this.add.sprite(615, 35, "botonSonido2").setScale(1.5).setVisible(false);
+
+            botonMute = this.add.sprite(615, 35, "botonMute").setScale(1.5).setInteractive()
+            .on("pointerover", () => {
+                botonMute2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonMute2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonMute2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                game.sound.mute = true;
+            });
+
+            botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
 
             personaje = this.physics.add.sprite(425,425, "Personaje").setScale(2.25).setImmovable(true);
 
@@ -96,10 +97,66 @@ class Ayuda extends Phaser.Scene{
                 this.add.bitmapText(130, 150, "pixelFont", 'Use as SETAS para virar o fazendeiro', 30);
                 this.add.bitmapText(150, 200, "pixelFont", 'e a BARRA DE ESPACAO para atirar', 30);
             }
-
-            
         }
+
         if(plataforma == 1){
+
+            this.add.image(325, 500, "BGMobile");
+
+            this.add.image(325, 350, "cartel").setScale(1.9);
+
+            menuButton = this.add.sprite(50, 50, "Menu").setScale(2).setInteractive()
+            .on("pointerover", () => {
+                menuButton2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                menuButton2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                menuButton2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                this.scene.start("Menu");
+                this.scene.stop("Mobile");
+                this.scene.stop("Creditos");
+            });
+
+            menuButton2 = this.add.sprite(50, 50, "Menu2").setScale(2).setVisible(false);
+
+            botonSonido = this.add.sprite(600, 50, "botonSonido").setScale(2).setInteractive()
+            .on("pointerover", () => {
+                botonSonido2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonSonido2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonSonido2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                game.sound.mute = false;
+            });
+
+            botonSonido2 = this.add.sprite(600, 50, "botonSonido2").setScale(2).setVisible(false);
+
+            botonMute = this.add.sprite(600, 50, "botonMute").setScale(2).setInteractive()
+            .on("pointerover", () => {
+                botonMute2.setVisible(true);
+            })
+            .on("pointerout", () => {
+                botonMute2.setVisible(false);
+            })
+            .on("pointerdown", () => {
+                botonMute2.setVisible(true);
+            })
+            .on("pointerup", () => {
+                sonidoBoton.play();
+                game.sound.mute = true;
+            });
+
+            botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
 
             this.scene.launch("Mobile");
 

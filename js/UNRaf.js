@@ -66,6 +66,7 @@ class UNRaf extends Phaser.Scene{
         this.load.image('fotoRata3', 'assets/Images/fotoRata3.png');
         this.load.image('flecha', 'assets/Images/Flecha.png');
         this.load.image('flecha2', 'assets/Images/Flecha2.png');
+        this.load.image('oscurecidoMobile', 'assets/Images/oscurecidoMobile.png');
 
         //Ayuda
         this.load.image('keys', 'assets/Images/keys.png');
