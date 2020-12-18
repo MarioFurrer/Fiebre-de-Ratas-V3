@@ -152,7 +152,7 @@ class Nivel4 extends Phaser.Scene{
                     Rata.body.setVelocityY(50);
                 }
                 else {
-                    if (carril <= 0.66){
+                    if (clase <= 0.66){
                         Rata.vida = 1;
                         Rata.anims.play('rata2', true);
                         Rata.setScale(1.5);
@@ -178,7 +178,7 @@ class Nivel4 extends Phaser.Scene{
                         Rata.body.setVelocityY(-50);
                     }
                     else {
-                        if (carril <= 0.66){
+                        if (clase <= 0.66){
                             Rata.vida = 1;
                             Rata.anims.play('rata2', true);
                             Rata.setScale(1.5);
@@ -204,7 +204,7 @@ class Nivel4 extends Phaser.Scene{
                             Rata.body.setVelocityX(50);
                         }
                         else {
-                            if (carril <= 0.66){
+                            if (clase <= 0.66){
                                 Rata.vida = 1;
                                 Rata.anims.play('rata2', true);
                                 Rata.setScale(1.5);
@@ -303,7 +303,7 @@ class Nivel4 extends Phaser.Scene{
                     Rata.body.setVelocityY(50);
                 }
                 else {
-                    if (carril <= 0.66){
+                    if (clase <= 0.66){
                         Rata.vida = 1;
                         Rata.anims.play('rata2', true);
                         Rata.setScale(1.5);
@@ -329,7 +329,7 @@ class Nivel4 extends Phaser.Scene{
                         Rata.body.setVelocityY(-50);
                     }
                     else {
-                        if (carril <= 0.66){
+                        if (clase <= 0.66){
                             Rata.vida = 1;
                             Rata.anims.play('rata2', true);
                             Rata.setScale(1.5);
@@ -355,7 +355,7 @@ class Nivel4 extends Phaser.Scene{
                             Rata.body.setVelocityX(50);
                         }
                         else {
-                            if (carril <= 0.66){
+                            if (clase <= 0.66){
                                 Rata.vida = 1;
                                 Rata.anims.play('rata2', true);
                                 Rata.setScale(1.5);
