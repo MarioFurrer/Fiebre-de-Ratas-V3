@@ -1,8 +1,12 @@
 var config = {
     type: Phaser.AUTO,
-    parent: null,
-    width: 650,
-    height: 1000,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        parent: "juego",
+        width: 650,
+        height: 650,
+    },
     physics: {
         default: "arcade",
         arcade: {
@@ -10,7 +14,7 @@ var config = {
         }
     },
 
-    scene: [UNRaf, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota, Mobile]
+    scene: [Preloader, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota, Mobile]
 };
 
 var game = new Phaser.Game(config);
@@ -85,12 +89,13 @@ var carril;
 var infeccion;
 var muerteRatas;
 var valInfeccion;
-var language;
+var language = 0;
 var plataforma;
 var clase;
 var cronometro;
 var time;
 var buttonDown;
+var lvlState = 1;
 
 //TEXTO
 var textoMaiz;
@@ -104,6 +109,11 @@ var Verificacion;
 var reloj;
 var temporizador;
 var pag;
+var candado2;
+var candado3;
+var candado4;
+var candado5;
+var candado6;
 
 //ALIADOS/CONSTRUCCIONES
 var personaje;
@@ -123,3 +133,6 @@ var musicaDerrota;
 var sonidoBoton;
 var rataAhuyentada;
 var hitRata;
+
+
+var testing = 0;

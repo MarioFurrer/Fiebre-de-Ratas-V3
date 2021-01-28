@@ -60,7 +60,7 @@ class Nivel4 extends Phaser.Scene{
 
             reloj = this.add.sprite(50, 600, "reloj").setScale(2);
 
-            temporizador = this.add.bitmapText(27, 585, "pixelFont", time, 50);
+            temporizador = this.add.text(30, 575, time, {fontFamily: 'pixelated', fontSize: 50});
 
         }
 
@@ -86,7 +86,7 @@ class Nivel4 extends Phaser.Scene{
 
             reloj = this.add.sprite(75, 575, "reloj").setScale(3.5);
 
-            temporizador = this.add.bitmapText(40, 550, "pixelFont", time, 75);
+            temporizador = this.add.text(44, 535, time, {fontFamily: 'pixelated', fontSize: 75});
         }
 
         this.anims.create({
@@ -467,20 +467,20 @@ class Nivel4 extends Phaser.Scene{
         if(plataforma == 0){
 
             if(time <= 19){
-                temporizador.setX(34);
+                temporizador.setX(33);
             }
             if(time <= 9){
-                temporizador.setX(37);
+                temporizador.setX(39);
             }
 
         }
         if(plataforma == 1){
 
             if(time <= 19){
-                temporizador.setX(50);
+                temporizador.setX(49);
             }
             if(time <= 9){
-                temporizador.setX(55);
+                temporizador.setX(57);
             }
         }
     }

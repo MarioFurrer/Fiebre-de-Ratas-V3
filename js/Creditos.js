@@ -63,34 +63,34 @@ class Creditos extends Phaser.Scene{
 
             botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
             
-            this.add.bitmapText(235, 450, "pixelFont", 'Facundo Abzug', 35);
-            this.add.bitmapText(247, 525, "pixelFont", 'Mario Furrer', 35);
+            this.add.text(235, 450, 'Facundo Abzug',{fontFamily: 'pixelated', fontSize: 33});
+            this.add.text(245, 525, 'Mario Furrer',{fontFamily: 'pixelated', fontSize: 33});
 
             if(language == 0){
 
                 Logo = this.add.image(325, 150, "LogoES").setScale(1.5);
 
-                this.add.bitmapText(250, 350, "pixelFont", 'Integrantes', 35);
+                this.add.text(250, 350, 'Integrantes',{fontFamily: 'pixelated', fontSize: 35});
 
-                this.add.bitmapText(30, 620, "pixelFont", 'Musica: https://www.purple-planet.com', 35);
+                this.add.text(30, 610, 'Música: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 35});
             }
 
             if(language == 1){
                 
-                Logo = this.add.image(325, 150, "LogoEN").setScale(1.5);
+                Logo = this.add.image(325, 150, "LogoEN").setScale(2);
 
-                this.add.bitmapText(268, 350, "pixelFont", 'Members', 35);
+                this.add.text(268, 350, 'Members',{fontFamily: 'pixelated', fontSize: 35});
 
-                this.add.bitmapText(30, 620, "pixelFont", 'Music: https://www.purple-planet.com', 35);
+                this.add.text(30, 610, 'Music: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 35});
             }
 
             if(language == 2){
                 
                 Logo = this.add.image(325, 150, "LogoPOR").setScale(1.5);
 
-                this.add.bitmapText(268, 350, "pixelFont", 'Membros', 35);
+                this.add.text(268, 350, 'Membros',{fontFamily: 'pixelated', fontSize: 35});
 
-                this.add.bitmapText(30, 620, "pixelFont", 'Musica: https://www.purple-planet.com', 35);
+                this.add.text(30, 610, 'Música: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 35});
             }
         }
 
@@ -152,35 +152,35 @@ class Creditos extends Phaser.Scene{
 
             botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
             
-            this.add.bitmapText(185, 650, "pixelFont", 'Facundo Abzug', 55);
+            this.add.text(180, 650, 'Facundo Abzug',{fontFamily: 'pixelated', fontSize: 55});
 
-            this.add.bitmapText(200, 800, "pixelFont", 'Mario Furrer', 55);
+            this.add.text(195, 800, 'Mario Furrer',{fontFamily: 'pixelated', fontSize: 55});
 
             if(language == 0){
 
                 Logo = this.add.image(325, 175, "LogoES").setScale(2.5);
 
-                this.add.bitmapText(210, 450, "pixelFont", 'Integrantes', 55);
+                this.add.text(200, 450, 'Integrantes',{fontFamily: 'pixelated', fontSize: 57});
 
-                this.add.bitmapText(20, 960, "pixelFont", 'Musica: https://www.purple-planet.com', 42);
+                this.add.text(10, 950, 'Música: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 42});
             }
 
             if(language == 1){
                 
                 Logo = this.add.image(325, 175, "LogoEN").setScale(2.5);
 
-                this.add.bitmapText(240, 450, "pixelFont", 'Members', 55);
+                this.add.text(240, 450, 'Members',{fontFamily: 'pixelated', fontSize: 57});
 
-                this.add.bitmapText(20, 960, "pixelFont", 'Music: https://www.purple-planet.com', 42);
+                this.add.text(10, 950, 'Music: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 42});
             }
 
             if(language == 2){
                 
                 Logo = this.add.image(325, 175, "LogoPOR").setScale(2.5);
 
-                this.add.bitmapText(240, 450, "pixelFont", 'Membros', 55);
+                this.add.text(240, 450, 'Membros',{fontFamily: 'pixelated', fontSize: 57});
 
-                this.add.bitmapText(20, 960, "pixelFont", 'Musica: https://www.purple-planet.com', 42);
+                this.add.text(10, 950, 'Música: https://www.purple-planet.com',{fontFamily: 'pixelated', fontSize: 42});
             }
             
         }

@@ -84,18 +84,18 @@ class Ayuda extends Phaser.Scene{
             cursor = this.input.keyboard.createCursorKeys();
 
             if(language == 0){
-                this.add.bitmapText(125, 150, "pixelFont", 'Usa las FLECHAS para girar al granjero', 30);
-                this.add.bitmapText(125, 200, "pixelFont", 'y la BARRA ESPACIADORA para disparar', 30);
+                this.add.text(125, 150, 'Usa las FLECHAS para girar al granjero', {fontFamily: 'pixelated', fontSize: 25});
+                this.add.text(135, 200, 'y la BARRA ESPACIADORA para disparar', {fontFamily: 'pixelated', fontSize: 25});
             }
           
             if(language == 1){
-                this.add.bitmapText(125, 150, "pixelFont", 'Use the ARROWS to rotate the farmer', 30);
-                this.add.bitmapText(185, 200, "pixelFont", 'and the SPACEBAR to shoot', 30);
+                this.add.text(125, 150, 'Use the ARROWS to rotate the farmer', {fontFamily: 'pixelated', fontSize: 25});
+                this.add.text(185, 200, 'and the SPACEBAR to shoot', {fontFamily: 'pixelated', fontSize: 25});
             }
           
             if(language == 2){
-                this.add.bitmapText(130, 150, "pixelFont", 'Use as SETAS para virar o fazendeiro', 30);
-                this.add.bitmapText(150, 200, "pixelFont", 'e a BARRA DE ESPACAO para atirar', 30);
+                this.add.text(130, 150, 'Use as SETAS para virar o fazendeiro', {fontFamily: 'pixelated', fontSize: 25});
+                this.add.text(150, 200, 'e a BARRA DE ESPAÇO para atirar', {fontFamily: 'pixelated', fontSize: 25});
             }
         }
 
@@ -163,7 +163,7 @@ class Ayuda extends Phaser.Scene{
             personaje = this.physics.add.sprite(325,425, "Personaje").setScale(2.25).setImmovable(true);
 
             if(language == 0){
-                this.add.bitmapText(125, 150, "pixelFont", 'Usa las FLECHAS para girar al granjero', 30);
+                this.add.text(125, 150, 'Usa las FLECHAS para girar al granjero', {fontFamily: 'pixelated', fontSize: 13});
                 this.add.bitmapText(200, 200, "pixelFont", 'y el BOTON para disparar', 30);
             }
           

@@ -11,6 +11,22 @@ class Victoria extends Phaser.Scene {
 
     musicaVictoria.play();
 
+    if (currentLevel == 1){
+      lvlState = 2;
+    }
+    if (currentLevel == 2){
+      lvlState = 3;
+    }
+    if (currentLevel == 3){
+      lvlState = 4;
+    }
+    if (currentLevel == 4){
+      lvlState = 5;
+    }
+    if (currentLevel == 5){
+      lvlState = 6;
+    }
+
     this.add.image(640, 350, "fondoOscurecido").setScale(3);
 
     if(plataforma == 0){
@@ -68,22 +84,27 @@ class Victoria extends Phaser.Scene {
         sonidoBoton.play();
         musicaVictoria.stop();
         if (currentLevel == 1){
+          lvlState = 2;
           this.scene.stop('Nivel1');
           this.scene.start('Nivel2');
         }
         if (currentLevel == 2){
+          lvlState = 3;
           this.scene.stop('Nivel2');
           this.scene.start('Nivel3');
         }
         if (currentLevel == 3){
+          lvlState = 4;
           this.scene.stop('Nivel3');
           this.scene.start('Nivel4');
         }
         if (currentLevel == 4){
+          lvlState = 5;
           this.scene.stop('Nivel4');
           this.scene.start('Nivel5');
         }
         if (currentLevel == 5){
+          lvlState = 6;
           this.scene.stop('Nivel5');
           this.scene.start('Nivel6');
         }

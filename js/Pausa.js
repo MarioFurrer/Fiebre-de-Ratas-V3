@@ -8,7 +8,7 @@ class Pausa extends Phaser.Scene {
 
         if(plataforma == 0){
 
-            cartel = this.add.image(325, 350, "cartel").setScale(1.5);
+            cartel = this.add.image(325, 300, "cartel").setScale(1.5);
 
             if(language == 0 || language == 2){
                 this.add.image(325, 150, "cartelPausa");

@@ -482,7 +482,7 @@ class Menu extends Phaser.Scene{
                 botonCreditos2 = this.add.sprite(325, 775, "Creditos2").setScale(4.4).setVisible(false);
             }
             // Inglés
-            else if (language == 1){
+            if (language == 1){
 
                 //Logo
                 Logo = this.add.image(325, 175, "LogoEN").setScale(2.5);
@@ -563,8 +563,9 @@ class Menu extends Phaser.Scene{
 
                 botonCreditos2 = this.add.sprite(325, 775, "Credits2").setScale(4.4).setVisible(false);
             }
+            
             //Portugés
-            else {
+            if (language == 2){
 
                 //Logo
                 Logo = this.add.image(325, 175, "LogoPOR").setScale(2.5);
@@ -665,9 +666,9 @@ class Menu extends Phaser.Scene{
                     else {}
                 });
 
-                botonES2 = this.add.sprite(370, 940, "iconoES2").setScale(2).setVisible(false);
+            botonES2 = this.add.sprite(370, 940, "iconoES2").setScale(2).setVisible(false);
 
-                botonEN = this.add.image(480, 940, "iconoEN").setScale(2).setInteractive()
+            botonEN = this.add.image(480, 940, "iconoEN").setScale(2).setInteractive()
                 .on("pointerover", () => {
                     botonEN2.setVisible(true);
                 })
@@ -686,9 +687,9 @@ class Menu extends Phaser.Scene{
                     else {}
                 });
 
-                botonEN2 = this.add.sprite(480, 940, "iconoEN2").setScale(2).setVisible(false);
+            botonEN2 = this.add.sprite(480, 940, "iconoEN2").setScale(2).setVisible(false);
 
-                botonPOR = this.add.image(590, 940, "iconoBR").setScale(2).setInteractive()
+            botonPOR = this.add.image(590, 940, "iconoBR").setScale(2).setInteractive()
                 .on("pointerover", () => {
                     botonPOR2.setVisible(true);
                 })
@@ -707,7 +708,7 @@ class Menu extends Phaser.Scene{
                     else {}
                 });
 
-                botonPOR2 = this.add.sprite(590, 940, "iconoBR2").setScale(2).setVisible(false);
+            botonPOR2 = this.add.sprite(590, 940, "iconoBR2").setScale(2).setVisible(false);
         }
     }
 
