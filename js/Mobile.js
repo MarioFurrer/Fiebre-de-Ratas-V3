@@ -1,81 +1,138 @@
-class Mobile extends Phaser.Scene{
-    constructor(){
-        super("Mobile");
-    }
+var config = {
+    type: Phaser.AUTO,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        parent: "juego",
+        width: 650,
+        height: 1000,
+    },
+    physics: {
+        default: "arcade",
+        arcade: {
+            debug: false
+        }
+    },
 
-    create(){
+    scene: [Preloader, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota, MobileSet]
+};
 
-        this.add.image(325, 825, "fondoMobile");
+var game = new Phaser.Game(config);
 
-        flechaUP = this.add.sprite(175, 740, "flechaUP").setScale(2).setInteractive()
-        .on("pointerout", () => {
-            flechaUP2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            flechaUP2.setVisible(true);
-            personaje.angle = 90;
-        })
-        .on("pointerup", () => {
-            flechaUP2.setVisible(false);
-        });
+//INTERACTUABLES
+var Aceptar;
+var botonAyuda;
+var botonAyuda2;
+var botonCreditos;
+var botonCreditos2;
+var botonInformacion;
+var botonInformacion2;
+var botonJugar;
+var botonJugar2;
+var botonES;
+var botonES2;
+var botonEN;
+var botonEN2;
+var botonPOR;
+var botonPOR2;
+var Cancelar;
+var Continuar;
+var Continuar2;
+var Logo;
+var GameOverButton;
+var victoryButton;
+var menuButton;
+var menuButton2;
+var Volver;
+var Salir;
+var teclado;
+var teclado2;
+var movil;
+var movil2;
+var keyUP;
+var keyDOWN;
+var keyLEFT;
+var keyRIGHT;
+var keySB;
+var pauseButton;
+var pauseButton2;
+var restart;
+var restart2;
+var flechaI;
+var flechaI2;
+var flechaD;
+var flechaD2;
+var botonSonido;
+var botonSonido2;
+var botonMute;
+var botonMute2;
+var flechaUP;
+var flechaUP2;
+var flechaDOWN;
+var flechaDOWN2;
+var flechaLEFT;
+var flechaLEFT2;
+var flechaRIGHT;
+var flechaRIGHT2;
+var botonSHOOT;
+var botonSHOOT2;
 
-        flechaUP2 = this.add.sprite(175, 740, "flechaUP2").setScale(2).setVisible(false);
+//VALORES
+var currentLevel;
+var map;
+var timerRatas;
+var timer;
+var reload;
+var shoot;
+var cursor;
+var carril;
+var infeccion;
+var muerteRatas;
+var valInfeccion;
+var language = 0;
+var plataforma = 1;
+var clase;
+var cronometro;
+var time;
+var buttonDown;
+var lvlState = 1;
 
-        flechaDOWN = this.add.sprite(175, 910, "flechaDOWN").setScale(2).setInteractive()
-        .on("pointerout", () => {
-            flechaDOWN2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            flechaDOWN2.setVisible(true);
-            personaje.angle = -90;
-        })
-        .on("pointerup", () => {
-            flechaDOWN2.setVisible(false);
-        });
+//TEXTO
+var textoMaiz;
 
-        flechaDOWN2 = this.add.sprite(175, 910, "flechaDOWN2").setScale(2).setVisible(false);
+//ESCENARIO
+var fondoLVL;
+var cartel;
+var defensa;
+var fondoPausa;
+var Verificacion;
+var reloj;
+var temporizador;
+var pag;
+var candado2;
+var candado3;
+var candado4;
+var candado5;
+var candado6;
 
-        flechaLEFT = this.add.sprite(90, 825, "flechaLEFT").setScale(2).setInteractive()
-        .on("pointerout", () => {
-            flechaLEFT2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            flechaLEFT2.setVisible(true);
-            personaje.angle = 0;
-        })
-        .on("pointerup", () => {
-            flechaLEFT2.setVisible(false);
-        });
+//ALIADOS/CONSTRUCCIONES
+var personaje;
+var Balas;
+var bala;
 
-        flechaLEFT2 = this.add.sprite(90, 825, "flechaLEFT2").setScale(2).setVisible(false);
+//ENEMIGOS
+var muerteRatas;
+var Ratas;
+var RataY;
 
-        flechaRIGHT = this.add.sprite(260, 825, "flechaRIGHT").setScale(2).setInteractive()
-        .on("pointerout", () => {
-            flechaRIGHT2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            flechaRIGHT2.setVisible(true);
-            personaje.angle = 179;
-        })
-        .on("pointerup", () => {
-            flechaRIGHT2.setVisible(false);
-        });
+//AUDIOS
+var musicaIngame;
+var musicaMenu;
+var musicaVictoria;
+var musicaDerrota;
+var sonidoBoton;
+var rataAhuyentada;
+var hitRata;
 
-        flechaRIGHT2 = this.add.sprite(260, 825, "flechaRIGHT2").setScale(2).setVisible(false);
 
-        botonSHOOT = this.add.sprite(475, 825, "botonDisparo").setScale(5).setInteractive()
-        .on("pointerout", () => {
-            botonSHOOT2.setVisible(false);
-        })
-        .on("pointerdown", () => {
-            botonSHOOT2.setVisible(true);
-            buttonDown = true;
-        })
-        .on("pointerup", () => {
-            botonSHOOT2.setVisible(false);
-            buttonDown = false;
-        });
-
-        botonSHOOT2 = this.add.sprite(475, 825, "botonDisparo2").setScale(5).setVisible(false);
-    }
-}
+var testing = 0;

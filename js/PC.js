@@ -133,3 +133,6 @@ var musicaDerrota;
 var sonidoBoton;
 var rataAhuyentada;
 var hitRata;
+
+
+var testing = 0;

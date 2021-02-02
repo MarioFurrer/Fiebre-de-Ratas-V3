@@ -103,7 +103,7 @@ class Ayuda extends Phaser.Scene{
 
             this.add.image(325, 500, "BGMobile");
 
-            this.scene.launch("Mobile");
+            this.scene.launch("MobileSet");
 
             this.add.image(325, 350, "cartel").setScale(1.9);
 
@@ -120,7 +120,7 @@ class Ayuda extends Phaser.Scene{
             .on("pointerup", () => {
                 sonidoBoton.play();
                 this.scene.start("Menu");
-                this.scene.stop("Mobile");
+                this.scene.stop("MobileSet");
                 this.scene.stop("Creditos");
             });
 

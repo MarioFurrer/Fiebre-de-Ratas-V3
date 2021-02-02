@@ -6,7 +6,7 @@ class Nivel3 extends Phaser.Scene{
     create(){
 
         if(plataforma == 1){
-            this.scene.launch("Mobile");
+            this.scene.launch("MobileSet");
         }
         
         currentLevel = 3;

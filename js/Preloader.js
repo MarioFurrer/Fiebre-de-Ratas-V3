@@ -243,33 +243,7 @@ class Preloader extends Phaser.Scene{
         })
         .on("pointerup", () => {
 
-            if (plataforma == 1){
-                this.scene.start("Menu");
-                musicaMenu.play({volume: 0.8});
-            }
-            else{
-                plataforma = 1;
-                this.sys.game.destroy(true);
-                config = {
-                    type: Phaser.AUTO,
-                    scale: {
-                        mode: Phaser.Scale.FIT,
-                        autoCenter: Phaser.Scale.CENTER_BOTH,
-                        parent: "juego",
-                        width: 650,
-                        height: 1000,
-                    },
-                    physics: {
-                        default: "arcade",
-                        arcade: {
-                            debug: false
-                        }
-                    },
-                
-                    scene: [Preloader, Menu, Informacion, Ayuda, Creditos, SeleccionLvL, Nivel1, Nivel2, Nivel3, Nivel4, Nivel5, Nivel6, Pausa, Victoria, Derrota, Mobile]
-                };
-                game = new Phaser.Game(config);
-            }
+            window.open('./Mobile.html');
         });
 
         movil2 = this.add.sprite(490, 400, "Movil2").setVisible(false);

@@ -5,7 +5,7 @@ class Derrota extends Phaser.Scene {
     
     create(){
 
-        this.scene.stop('Mobile');
+        this.scene.stop('MobileSet');
           
         musicaIngame.stop();
 
