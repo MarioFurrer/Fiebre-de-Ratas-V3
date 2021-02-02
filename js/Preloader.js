@@ -242,7 +242,7 @@ class Preloader extends Phaser.Scene{
             movil2.setVisible(true);
         })
         .on("pointerup", () => {
-
+            movil2.setVisible(false);
             window.open('./Mobile.html');
         });
 
