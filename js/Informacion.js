@@ -62,7 +62,7 @@ class Informacion extends Phaser.Scene{
 
             botonMute2 = this.add.sprite(615, 35, "botonMute2").setScale(1.5).setVisible(false);
 
-            flechaI = this.add.sprite(25, 610, "flecha").setScale(1.5).setInteractive()
+            flechaI = this.add.sprite(25, 600, "flechaLEFT").setScale(1.5).setInteractive()
             .on("pointerover", () => {
                 flechaI2.setVisible(true);
             })
@@ -83,9 +83,9 @@ class Informacion extends Phaser.Scene{
                 this.scene.restart(Informacion);
             });
 
-            flechaI2 = this.add.sprite(25, 610, "flecha2").setScale(1.5).setVisible(false);
+            flechaI2 = this.add.sprite(25, 600, "flechaLEFT2").setScale(1.5).setVisible(false);
 
-            flechaD = this.add.sprite(625, 610, "flecha").setScale(1.5).setInteractive()
+            flechaD = this.add.sprite(625, 600, "flechaLEFT").setScale(1.5).setInteractive()
             .on("pointerover", () => {
                 flechaD2.setVisible(true);
             })
@@ -108,7 +108,7 @@ class Informacion extends Phaser.Scene{
             });
             flechaD.angle = 180;
 
-            flechaD2 = this.add.sprite(625, 610, "flecha2").setScale(1.5).setVisible(false);
+            flechaD2 = this.add.sprite(625, 600, "flechaLEFT2").setScale(1.5).setVisible(false);
             flechaD2.angle = 180;   
 
             if(language == 0){
@@ -164,7 +164,7 @@ class Informacion extends Phaser.Scene{
                     this.add.text(15, 75, 'El tratamiento incluye la aplicación de plasma inmune específico de', {fontFamily: 'pixelated', fontSize: 22});
                     this.add.text(40, 105, 'pacientes convalecientes en el término de 8 días después del', {fontFamily: 'pixelated', fontSize: 22});
                     this.add.text(25, 135, 'comienzo de la enfermedad, es extremadamente efectivo y reduce', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(90, 165, 'la mortalidad al 1 % si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(90, 165, 'la mortalidad al 1% si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 22});
 
                     this.add.text(40, 205, 'La Ribavirina ha mostrado alguna ventaja en el tratamiento de', {fontFamily: 'pixelated', fontSize: 22});
                     this.add.text(195, 235, 'enfermedades por arenavirus', {fontFamily: 'pixelated', fontSize: 22});
@@ -244,9 +244,9 @@ class Informacion extends Phaser.Scene{
 
                     this.add.text(13, 465, 'The Candid #1 vaccine, produced by the National Institute of Human', {fontFamily: 'pixelated', fontSize: 22});
                     this.add.text(25, 495, 'Viral Diseases "Dr. Julio I Maiztegui" against the Junin virus has', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(60, 525, 'proven to be innocuous, immunogenic and 95.5% effective', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(40, 555, 'It also reacts to the Machupo virus and has therefore been', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(110, 585, 'considered an alternative treatment for FHB', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(65, 525, 'proven to be innocuous, immunogenic and 95.5% effective', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(65, 555, 'It also reacts to the Machupo virus and has therefore', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(90, 585, 'been considered an alternative treatment for FHB', {fontFamily: 'pixelated', fontSize: 22});
                 }
                 
             }
@@ -380,7 +380,7 @@ class Informacion extends Phaser.Scene{
 
             botonMute2 = this.add.sprite(600, 50, "botonMute2").setScale(2).setVisible(false);
 
-            flechaI = this.add.sprite(30, 950, "flecha").setScale(2).setInteractive()
+            flechaI = this.add.sprite(30, 940, "flechaLEFT").setScale(2).setInteractive()
             .on("pointerover", () => {
                 flechaI2.setVisible(true);
             })
@@ -401,9 +401,9 @@ class Informacion extends Phaser.Scene{
                 this.scene.restart(Informacion);
             });
 
-            flechaI2 = this.add.sprite(30, 950, "flecha2").setScale(2).setVisible(false);
+            flechaI2 = this.add.sprite(30, 940, "flechaLEFT2").setScale(2).setVisible(false);
 
-            flechaD = this.add.sprite(620, 950, "flecha").setScale(2).setInteractive()
+            flechaD = this.add.sprite(620, 940, "flechaLEFT").setScale(2).setInteractive()
             .on("pointerover", () => {
                 flechaD2.setVisible(true);
             })
@@ -426,80 +426,85 @@ class Informacion extends Phaser.Scene{
             });
             flechaD.angle = 180;
 
-            flechaD2 = this.add.sprite(620, 950, "flecha2").setScale(2).setVisible(false);
+            flechaD2 = this.add.sprite(620, 940, "flechaLEFT2").setScale(2).setVisible(false);
             flechaD2.angle = 180;   
 
             if(language == 0){
 
                 if(pag == 1){
 
-                    this.add.text(100, 75, 'Fiebre Hemorrágica Argentina', {fontFamily: 'pixelated', fontSize: 39});
+                    this.add.text(90, 75, 'Fiebre Hemorrágica Argentina', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(40, 200, 'La Fiebre Hemorrágica Argentina (FHA) es una enfermedad viral', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(270 , 230, 'aguda grave', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(40, 200, 'La Fiebre Hemorrágica Argentina (FHA) es una', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(150 , 240, 'enfermedad viral aguda grave', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(25, 330, 'Es transmitida por el contacto directo con roedores o inhalación', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(160, 360, 'de excretas de roedores infectados', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(50, 350, 'Es transmitida por el contacto directo con', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(35, 390, 'roedores o inhalación de excretas de roedores', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(270, 430, 'infectados', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(40, 510, 'Roedor: Calomys musculinus (Laucha manchada, laucha del maíz,', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(260, 540, 'ratón maicero)', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.image(125, 620, "fotoRata");
-                    this.add.image(325, 620, "fotoRata2");
-                    this.add.image(525, 620, "fotoRata3");
+                    this.add.text(50, 530, 'Roedor: Calomys musculinus (Laucha manchada,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(125, 570, 'laucha del maíz, ratón maicero)', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.image(125, 670, "fotoRata");
+                    this.add.image(325, 670, "fotoRata2");
+                    this.add.image(525, 670, "fotoRata3");
 
-                    this.add.text(45, 830, 'En Argentina está limitada a las provincias de Buenos Aires,', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(125, 860, 'Córdoba, Santa Fe, Entre Ríos y de La Pampa', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(45, 790, 'En Argentina está limitada a las provincias de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(45, 830, 'Buenos Aires, Córdoba, Santa Fe, Entre Ríos y', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(250, 870, 'de La Pampa', {fontFamily: 'pixelated', fontSize: 30});
                 }
 
                 if(pag == 2){
 
-                    this.add.text(265, 75, 'Síntomas', {fontFamily: 'pixelated', fontSize: 35});
+                    this.add.text(260, 40, 'Síntomas', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(165, 150, 'Tiempo de incubación: 1 a 2 semanas', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(95, 150, 'Tiempo de incubación: 1 a 2 semanas', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(30, 270, 'La enfermedad tiene un comportamiento estacional, con su mayor', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(120, 300, 'incidencia principalmente de marzo a octubre', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(15, 230, 'La enfermedad tiene un comportamiento estacional,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(25, 270, 'con su mayor incidencia principalmente de marzo', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(260, 310, 'a octubre', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(15, 420, 'Es más frecuente en el sexo masculino, en las edades comprendidas', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(240, 450, 'entre los 15 y los 60', {fontFamily: 'pixelated', fontSize: 22});
-
-
-                    this.add.text(20, 570, 'Los primeros síntomas incluyen fiebre, dolor de cabeza, debilidad,', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(50, 600, 'desgano, dolores articulares y oculares, pérdida de apetito', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(30, 390, 'Es más frecuente en el sexo masculino, en las', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(50, 430, 'edades comprendidas entre los 15 y los 60', {fontFamily: 'pixelated', fontSize: 30});
 
 
-                    this.add.text(53, 720, 'Estos síntomas se intensifican produciéndose síntomas de', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(68, 750, 'alteración vascular, renal, hematológica y neurológica,', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(200, 780, 'choque y crisis convulsivas', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(25, 510, 'Los primeros síntomas incluyen fiebre, dolor de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(35, 550, 'cabeza, debilidad, desgano, dolores articulares', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(145, 590, 'y oculares, pérdida de apetito', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(160, 900, 'La mortalidad de la FHA alcanza el 30%', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(40, 680, 'Estos síntomas se intensifican produciéndose', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(75, 720, 'síntomas de alteración vascular, renal,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(50, 760, 'hematológica y neurológica, choque y crisis', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(260, 800, 'convulsivas', {fontFamily: 'pixelated', fontSize: 30});
+
+                    this.add.text(85, 890, 'La mortalidad de la FHA alcanza el 30%', {fontFamily: 'pixelated', fontSize: 30});
                 }
 
                 if(pag == 3){
 
-                    this.add.text(240, 75, 'Tratamiento', {fontFamily: 'pixelated', fontSize: 35});
+                    this.add.text(240, 40, 'Tratamiento', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(15, 150, 'El tratamiento incluye la aplicación de plasma inmune específico de', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(40, 180, 'pacientes convalecientes en el término de 8 días después del', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(25, 210, 'comienzo de la enfermedad, es extremadamente efectivo y reduce', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(90, 240, 'la mortalidad al 1 % si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(15, 150, 'El tratamiento incluye la aplicación de plasma', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(10, 180, 'inmune específico de pacientes convalecientes en el', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(5, 210, 'término de 8 días después del comienzo de la', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(5, 240, 'enfermedad, es extremadamente efectivo y reduce', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(25, 270, 'la mortalidad al 1% si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(40, 320, 'La Ribavirina ha mostrado alguna ventaja en el tratamiento de', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(195, 350, 'enfermedades por arenavirus', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(40, 320, 'La Ribavirina ha mostrado alguna ventaja en el tratamiento de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(195, 350, 'enfermedades por arenavirus', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(105, 485, 'Factores de riesgo y prevención', {fontFamily: 'pixelated', fontSize: 35});
+                    this.add.text(105, 485, 'Factores de riesgo y prevención', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(20, 560, 'La FHA afecta a la población rural, predominantemente agricultores', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(10, 590, 'del sexo masculino, lo que indica que esta actividad es un factor de', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(45, 620, 'riesgo determinante de la infección al exponerse a material', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(150, 650, 'contaminado con excretas de roedores', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(20, 560, 'La FHA afecta a la población rural, predominantemente agricultores', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(10, 590, 'del sexo masculino, lo que indica que esta actividad es un factor de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(45, 620, 'riesgo determinante de la infección al exponerse a material', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(150, 650, 'contaminado con excretas de roedores', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(50, 780, 'La vacuna Candid #1, producida por el Instituto Nacional de', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(10, 810, 'Enfermedades Virales Humanas "Dr. Julio I Maiztegui" contra el virus', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(45, 840, 'Junin ha demostrado ser inocua, inmunogénica y con un 95,5%', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(255, 870, 'de efectividad', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(85, 900, 'También reacciona al virus Machupo y, por ende, ha sido', {fontFamily: 'pixelated', fontSize: 22});
-                    this.add.text(85, 930, 'considerada como tratamiento alternativo para la FHA', {fontFamily: 'pixelated', fontSize: 22});
+                    this.add.text(50, 780, 'La vacuna Candid #1, producida por el Instituto Nacional de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(10, 810, 'Enfermedades Virales Humanas "Dr. Julio I Maiztegui" contra el virus', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(45, 840, 'Junin ha demostrado ser inocua, inmunogénica y con un 95,5%', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(255, 870, 'de efectividad', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(85, 900, 'También reacciona al virus Machupo y, por ende, ha sido', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(85, 930, 'considerada como tratamiento alternativo para la FHA', {fontFamily: 'pixelated', fontSize: 30});
                 }
             }
 

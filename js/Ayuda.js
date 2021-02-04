@@ -163,18 +163,18 @@ class Ayuda extends Phaser.Scene{
             personaje = this.physics.add.sprite(325,425, "Personaje").setScale(2.25).setImmovable(true);
 
             if(language == 0){
-                this.add.text(125, 150, 'Usa las FLECHAS para girar al granjero', {fontFamily: 'pixelated', fontSize: 26});
-                this.add.text(200, 200, 'y el BOTON para disparar', {fontFamily: 'pixelated', fontSize: 26});
+                this.add.text(135, 135, 'Usa las FLECHAS para girar al', {fontFamily: 'pixelated', fontSize: 32});
+                this.add.text(100, 195, 'granjero y el BOTÓN para disparar', {fontFamily: 'pixelated', fontSize: 32});
             }
           
             if(language == 1){
-                this.add.text(125, 150, 'Use the ARROWS to rotate the farmer', {fontFamily: 'pixelated', fontSize: 26});
-                this.add.text(200, 200, 'and the BUTTON to shoot', {fontFamily: 'pixelated', fontSize: 26});
+                this.add.text(125, 135, 'Use the ARROWS to rotate the', {fontFamily: 'pixelated', fontSize: 32});
+                this.add.text(110, 195, 'farmer and the BUTTON to shoot', {fontFamily: 'pixelated', fontSize: 32});
             }
           
             if(language == 2){
-                this.add.text(130, 150, 'Use as SETAS para virar o fazendeiro', {fontFamily: 'pixelated', fontSize: 26});
-                this.add.text(225, 200, 'e o BOTAO para atirar', {fontFamily: 'pixelated', fontSize: 26});
+                this.add.text(160, 135, 'Use as SETAS para virar o', {fontFamily: 'pixelated', fontSize: 32});
+                this.add.text(110, 195, 'fazendeiro e o BOTÃO para atirar', {fontFamily: 'pixelated', fontSize: 32});
             }
         }
     }
