@@ -448,8 +448,8 @@ class Informacion extends Phaser.Scene{
                     this.add.image(325, 670, "fotoRata2");
                     this.add.image(525, 670, "fotoRata3");
 
-                    this.add.text(45, 790, 'En Argentina está limitada a las provincias de', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(45, 830, 'Buenos Aires, Córdoba, Santa Fe, Entre Ríos y', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(40, 790, 'En Argentina está limitada a las provincias de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(40, 830, 'Buenos Aires, Córdoba, Santa Fe, Entre Ríos y', {fontFamily: 'pixelated', fontSize: 30});
                     this.add.text(250, 870, 'de La Pampa', {fontFamily: 'pixelated', fontSize: 30});
                 }
 
@@ -481,30 +481,32 @@ class Informacion extends Phaser.Scene{
 
                 if(pag == 3){
 
-                    this.add.text(240, 40, 'Tratamiento', {fontFamily: 'pixelated', fontSize: 40});
+                    this.add.text(235, 30, 'Tratamiento', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(15, 150, 'El tratamiento incluye la aplicación de plasma', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(10, 180, 'inmune específico de pacientes convalecientes en el', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(5, 210, 'término de 8 días después del comienzo de la', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(5, 240, 'enfermedad, es extremadamente efectivo y reduce', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(25, 270, 'la mortalidad al 1% si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(40, 90, 'El tratamiento incluye la aplicación de plasma', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(6, 130, 'inmune específico de pacientes convalecientes en el', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(35, 170, 'término de 8 días después del comienzo de la', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(17, 210, 'enfermedad, es extremadamente efectivo y reduce', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(15, 250, 'la mortalidad al 1% si se comienza tempranamente', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(40, 320, 'La Ribavirina ha mostrado alguna ventaja en el tratamiento de', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(195, 350, 'enfermedades por arenavirus', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(30, 310, 'La Ribavirina ha mostrado alguna ventaja en el', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(50, 350, 'tratamiento de enfermedades por arenavirus', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(105, 485, 'Factores de riesgo y prevención', {fontFamily: 'pixelated', fontSize: 40});
+                    this.add.text(60, 410, 'Factores de riesgo y prevención', {fontFamily: 'pixelated', fontSize: 40});
 
-                    this.add.text(20, 560, 'La FHA afecta a la población rural, predominantemente agricultores', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(10, 590, 'del sexo masculino, lo que indica que esta actividad es un factor de', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(45, 620, 'riesgo determinante de la infección al exponerse a material', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(150, 650, 'contaminado con excretas de roedores', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(105, 470, 'La FHA afecta a la población rural,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(15, 510, 'predominantemente agricultores del sexo masculino,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(20, 560, 'lo que indica que esta actividad es un factor de', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(10, 600, 'riesgo determinante de la infección al exponerse a', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(35, 640, 'material contaminado con excretas de roedores', {fontFamily: 'pixelated', fontSize: 30});
 
-                    this.add.text(50, 780, 'La vacuna Candid #1, producida por el Instituto Nacional de', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(10, 810, 'Enfermedades Virales Humanas "Dr. Julio I Maiztegui" contra el virus', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(45, 840, 'Junin ha demostrado ser inocua, inmunogénica y con un 95,5%', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(255, 870, 'de efectividad', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(85, 900, 'También reacciona al virus Machupo y, por ende, ha sido', {fontFamily: 'pixelated', fontSize: 30});
-                    this.add.text(85, 930, 'considerada como tratamiento alternativo para la FHA', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(30, 700, 'La vacuna Candid #1, producida por el Instituto', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(5, 740, 'Nacional de Enfermedades Virales Humanas "Dr. Julio', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(6, 780, 'Maiztegui" contra el virus Junin ha demostrado ser', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(13, 820, 'inocua, inmunogénica y con un 95,5% de efectividad', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(25, 860, 'También reacciona al virus Machupo y, por ende,', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(90, 900, 'ha sido considerada como tratamiento', {fontFamily: 'pixelated', fontSize: 30});
+                    this.add.text(180, 940, 'alternativo para la FHA', {fontFamily: 'pixelated', fontSize: 30});
                 }
             }
 
