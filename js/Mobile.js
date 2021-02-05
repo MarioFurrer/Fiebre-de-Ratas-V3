@@ -89,7 +89,7 @@ var carril;
 var infeccion;
 var muerteRatas;
 var valInfeccion;
-var language = 0;
+var language = 2;
 var plataforma = 1;
 var clase;
 var cronometro;

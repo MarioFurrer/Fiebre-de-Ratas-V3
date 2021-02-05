@@ -526,7 +526,7 @@ class Menu extends Phaser.Scene{
                 botonAyuda2 = this.add.sprite(325, 540, "Help2").setScale(2).setVisible(false);
 
                 //Información
-                botonInformacion = this.add.image(325, 660, "Information").setScale(2.4).setInteractive()
+                botonInformacion = this.add.image(325, 670, "Information").setScale(2.4).setInteractive()
                 .on("pointerover", () => {
                     botonInformacion2.setVisible(true);
                 })
@@ -542,8 +542,8 @@ class Menu extends Phaser.Scene{
                     sonidoBoton.play();
                 });
 
-                botonInformacion2 = this.add.sprite(325, 660, "Information2").setScale(2.4).setVisible(false);
-
+                botonInformacion2 = this.add.sprite(325, 670, "Information2").setScale(2.4).setVisible(false);
+6
                 //Creditos
                 botonCreditos = this.add.image(325, 775, "Credits").setScale(4.4).setInteractive()
                 .on("pointerover", () => {
