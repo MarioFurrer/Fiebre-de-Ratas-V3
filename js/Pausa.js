@@ -89,7 +89,7 @@ class Pausa extends Phaser.Scene {
                     this.scene.start('Nivel6');
                 }
                 this.scene.stop('Pausa');
-                this.scene.stop('Mobile');
+                this.scene.stop('MobileSet');
             });
 
             restart2 = this.add.sprite(325, 350, "Restart2").setScale(1.5).setVisible(false);
@@ -253,7 +253,7 @@ class Pausa extends Phaser.Scene {
                     this.scene.start('Nivel6');
                 }
                 this.scene.stop('Pausa');
-                this.scene.stop('Mobile');
+                this.scene.stop('MobileSet');
             });
 
             restart2 = this.add.sprite(325, 400, "Restart2").setScale(2.5).setVisible(false);
@@ -289,7 +289,7 @@ class Pausa extends Phaser.Scene {
                 if (currentLevel == 6){
                     this.scene.stop('Nivel6');
                 }
-                this.scene.stop('Mobile');
+                this.scene.stop('MobileSet');
                 this.scene.start('Menu');
                 musicaMenu.play();
                 this.scene.stop('Pausa');
